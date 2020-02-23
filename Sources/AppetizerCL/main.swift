@@ -24,6 +24,7 @@ func main() {
     let androidIconPathArgument = parser.add(option: "--androidIcon", shortName: "-a", kind: PathArgument.self, usage: "The path to a directory where to generate the Android icon with different sizes.")
     let androidFolderPrefixArgument = parser.add(option: "--androidFolderPrefix", shortName: "-afp", kind: String.self, usage: "The folder prefix for the Android images. Example: 'mipmap' will generate folders like 'mipmap-mdpi' and 'mipmap-xhdpi'. Default is 'drawable'.")
     let singleIconPathArgument = parser.add(option: "--singleIcon", shortName: "-si", kind: PathArgument.self, usage: "The path to a directory where to generate a single icon with the specified size.")
+    let clearWhiteArgument = parser.add(option: "--clearWhite", shortName: "-cw", kind: Bool.self, usage: "Make white color areas transparent. Useful to remove white background.")
     
     do {
         let parsedArguments = try parser.parse(Array(ProcessInfo.processInfo.arguments.dropFirst()))
@@ -39,6 +40,7 @@ func main() {
         let androidIconPath = parsedArguments.get(androidIconPathArgument)
         let androidFolderPrefix = parsedArguments.get(androidFolderPrefixArgument) ?? "drawable"
         let singleIconPath = parsedArguments.get(singleIconPathArgument)
+        let clearWhite = parsedArguments.get(clearWhiteArgument) ?? false
         
         let inputFilePathString = inputFilePath.path.pathString
         
