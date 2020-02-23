@@ -51,6 +51,28 @@ public extension NSImage {
         return copy
     }
     
+    private func cgImageFromCiImage(_ inputImage: CIImage, rect: CGRect) -> CGImage {
+        let context = CIContext(options: nil)
+        if let cgImage = context.createCGImage(inputImage, from: rect) {
+            return cgImage
+        }
+        fatalError("could not convert CIImage to CGImage")
+    }
+    
+    func clearedWhite() -> NSImage {
+        let sourceNsImage = self
+        let cgImage = sourceNsImage.cgImage(forProposedRect: nil, context: nil, hints: [:])!
+        let ciImage = CIImage(cgImage: cgImage)
+        let filter = ClearWhiteFilter()
+        filter.assignInputImage(ciImage)
+        let outputImage = filter.outputImage!
+        
+        let imageSize = CGSize(width: cgImage.width, height: cgImage.height)
+        let outputCgImage = cgImageFromCiImage(outputImage, rect: .init(origin: .zero, size: imageSize))
+        
+        return NSImage(cgImage: outputCgImage, size: sourceNsImage.size)
+    }
+    
     func saveAsPng(fileUrl url: URL) throws {
         guard let imageData = self.tiffRepresentation else {
             throw ImageFileWriteError.dataRepresentationError
@@ -62,5 +84,31 @@ public extension NSImage {
             throw ImageFileWriteError.dataRepresentationError
         }
         try pngImage.write(to: url)
+    }
+}
+
+@objcMembers fileprivate class ClearWhiteFilter : CIFilter {
+    var inputImage: CIImage?
+    
+    private static let kernels = CIKernel.makeKernels(source:
+        """
+        kernel vec4 clearWhite(sampler image) {
+            vec4 t = sample(image, samplerCoord(image));
+            float brightness = (t.r + t.g + t.b) / 3.0;
+            float i = 1.0 - brightness;
+            t.a = min(i, t.a);
+            return t;
+        }
+        """
+    )!
+    
+    override public var outputImage: CIImage? {
+        let src = CISampler(image: self.inputImage!)
+        let kernel = ClearWhiteFilter.kernels[0]
+        return self.apply(kernel, arguments: [src], options: nil)
+    }
+    
+    func assignInputImage(_ image: CIImage) {
+        self.setValue(image, forKey: kCIInputImageKey)
     }
 }

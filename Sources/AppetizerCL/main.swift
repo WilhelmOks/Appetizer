@@ -44,7 +44,11 @@ func main() {
         
         let inputFilePathString = inputFilePath.path.pathString
         
-        let bigImage = try NSImage.from(filePath: inputFilePathString, sizeX: sizeX, sizeY: sizeY)
+        var bigImage = try NSImage.from(filePath: inputFilePathString, sizeX: sizeX, sizeY: sizeY)
+        
+        if clearWhite {
+            bigImage = bigImage.clearedWhite()
+        }
         
         let tintedImage = bigImage.tinted(withColor: tintColor)
         
