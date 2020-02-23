@@ -1,3 +1,7 @@
+<p>
+    <img src="https://img.shields.io/badge/Swift-5-orange.svg" />
+</p>
+
 # Appetizer
 
 Appetizer is a mac OS command line tool that takes an image (in PNG or JPG format) and makes suitable iOS and Android images and app icons.
