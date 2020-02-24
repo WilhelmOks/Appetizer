@@ -18,7 +18,17 @@ Appetizer is a macOS command line tool that takes an image (in PNG or JPG format
 
 ## Installation
 
-(TODO)
+### Binary release
+
+Download an appetizer binary from the release section and copy it into the folder `/usr/local/bin` so that it can be launched from anywhere in the command line.
+
+### Compile the source
+
+You can compile the source using the command line:
+
+`$ swift build -c release`
+
+Then copy the `appetizer` binary from the folder `.build/release` to `/usr/local/bin` so that it can be launched from anywhere in the command line.
 
 ## TODO
 
