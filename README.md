@@ -18,7 +18,7 @@ Appetizer is a macOS command line tool that takes an image (in PNG or JPG format
 
 The command `appetizer --help` will print information about the arguments.
 
-#### Android Icons
+#### Android Icon
 
 `appetizer icon.png 100 100 --androidIcon output`
 
@@ -34,7 +34,7 @@ You can set another name for the android folders, like `mipmap`:
 
 <img src="Images/s_android_mipmap.png" width="300" alt="Android mipmap"/>
 
-#### iOS Icons
+#### iOS Icon
 
 `appetizer icon.png 100 100 --iosIcon output`
 
@@ -44,15 +44,21 @@ This will create 3 images in the `output` folder:
 
 The size will be 100x100 for `icon.png`, 200x200 for `icon@2x.png` and 300x300 for `icon@3x.png`.
 
-#### iOS App Icons
+#### iOS App Icon
 
 `appetizer icon.png 100 100 --iosAppIcon output`
 
 This will create many images in the `output` folder:
 
-<img src="Images/s_ios_app_icon.png" width="200" alt="iOS app icon"/>
+<img src="Images/s_ios_app_icon_1.png" width="200" alt="iOS app icon"/>
 
 The images have each size needed to fully specify an app icon on iOS for the iPhone and the iPad, including the 1024x1024 App Store icon.
+
+#### Single Icon
+
+`appetizer icon.png 100 100 --singleIcon output`
+
+This will create one image in the `output` folder: `icon.png`. The size will be 100x100.
 
 ## Installation
 
