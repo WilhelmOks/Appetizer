@@ -60,6 +60,16 @@ The images have each size needed to fully specify an app icon on iOS for the iPh
 
 This will create one image in the `output` folder: `icon.png`. The size will be 100x100.
 
+#### Removing White Background
+
+On an image with white background and a black icon <img src="Images/icon.png" width="32"/>
+, you might want wo remove the white backgound so that it becomes transparent.
+
+`appetizer icon.png 100 100 --singleIcon output --clearWhite`
+
+Adding the `--clearWhite` parameter, the result will be an icon with transparent background: <img src="Images/t.png" width="32"/> <img src="Images/s_transparent.png" width="32"/>
+
+
 ## Installation
 
 ### Binary release
