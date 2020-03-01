@@ -26,7 +26,7 @@ This will create 5 folders in an `output` folder, each containing `icon.png` ima
 
 <img src="Images/s_android_drawable.png" width="300" alt="Android drawable"/>
 
-The image in `drawable-mdpi` will have 100x100 resolution. The others will have greater resolutions.
+The image in `drawable-mdpi` will have the size 100x100. The others will have greater size.
 
 You can set another name for the android folders, like `mipmap`:
 
@@ -42,8 +42,17 @@ This will create 3 images in the `output` folder:
 
 <img src="Images/s_ios.png" width="200" alt="iOS icon"/>
 
-The resolutions will be 100x100 for `icon.png`, 200x200 for `icon@2x.png` and 300x300 for `icon@3x.png`.
+The size will be 100x100 for `icon.png`, 200x200 for `icon@2x.png` and 300x300 for `icon@3x.png`.
 
+#### iOS App Icons
+
+`appetizer icon.png 100 100 --iosAppIcon output`
+
+This will create many images in the `output` folder:
+
+<img src="Images/s_ios_app_icon.png" width="200" alt="iOS app icon"/>
+
+The images have each size needed to fully specify an app icon on iOS for the iPhone and the iPad, including the 1024x1024 App Store icon.
 
 ## Installation
 
