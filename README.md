@@ -95,7 +95,13 @@ You can add transparent padding to the generated icon using the `--padding` argu
 
 `appetizer icon.png 100 100 --singleIcon output --padding 20`
 
-Source and generated icon in comparison: <img src="Images/t.png" width="32" style="border:1px solid black;"/> <img src="Images/padding_20.png" width="32" style="border:1px solid black;"/>
+Source and generated icon in comparison: <img src="Images/t.png" width="32"/> <img src="Images/padding_20.png" width="32"/>
+
+Or you can remove padding by providing a negative value:
+
+`appetizer icon.png 42 42 --singleIcon output --padding -2`
+
+This can be used to remove unwanted borders: <img src="Images/s_with_border.png" width="32"/> <img src="Images/s_with_border_minus2.png" width="32"/>
 
 ## Installation
 
