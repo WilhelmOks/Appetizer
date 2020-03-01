@@ -74,13 +74,28 @@ The generated icon will be `monkey.png`.
 
 #### Removing White Background
 
-On an image with white background and a black icon <img src="Images/icon.png" width="32"/>
+With a source image having white background and a black icon <img src="Images/icon.png" width="32"/>
 , you might want wo remove the white backgound so that it becomes transparent.
 
 `appetizer icon.png 100 100 --singleIcon output --clearWhite`
 
 Adding the `--clearWhite` parameter, the result will be an icon with transparent background: <img src="Images/t.png" width="32"/> <img src="Images/s_transparent.png" width="32"/>
 
+#### Coloring
+
+Using the `--color` argument, all opaque regions of the icon will be colored:
+
+`appetizer icon.png 100 100 --singleIcon output --color #ff5500`
+
+Using the source image <img src="Images/t.png" width="32"/>, the resulting image will look like this <img src="Images/ff5500.png" width="32"/>
+
+#### Padding
+
+You can add transparent padding to the generated icon using the `--padding` argument:
+
+`appetizer icon.png 100 100 --singleIcon output --padding 20`
+
+Source and generated icon in comparison: <img src="Images/t.png" width="32" style="border:1px solid black;"/> <img src="Images/padding_20.png" width="32" style="border:1px solid black;"/>
 
 ## Installation
 
