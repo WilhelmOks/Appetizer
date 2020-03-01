@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="Images/logo.png" width="500" alt="Appetizer"/>
+    <img src="Images/logo.png" width="400" alt="Appetizer"/>
 </p>
 
 <p align="center">
@@ -14,7 +14,19 @@ Appetizer is a macOS command line tool that takes an image (in PNG or JPG format
 
 ## Usage
 
-(TODO)
+### Command Line
+
+The command `appetizer --help` will print information about the arguments.
+
+#### Android Images
+
+`appetizer icon.png 100 100 --androidIcon output`
+
+This will create 5 folders in an `output` folder, each containing `icon.png` images of different sizes:
+
+<img src="Images/s_android_drawable.png" width="300" alt="Android"/>
+
+The image in `drawable-mdpi` will have 100x100 resolution. The others will have greater resolutions.
 
 ## Installation
 
@@ -26,7 +38,7 @@ Download an appetizer binary from the release section and copy it into the folde
 
 You can compile the source using the command line:
 
-`$ swift build -c release`
+`swift build -c release`
 
 Then copy the `appetizer` binary from the folder `.build/release` to `/usr/local/bin` so that it can be launched from anywhere in the command line.
 
