@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB0B240C258E00369A6D /* AppDelegate.swift */; };
+		EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB0D240C258E00369A6D /* ContentView.swift */; };
+		EDA2DB10240C259200369A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA2DB0F240C259200369A6D /* Assets.xcassets */; };
+		EDA2DB13240C259200369A6D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA2DB12240C259200369A6D /* Preview Assets.xcassets */; };
+		EDA2DB16240C259200369A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA2DB14240C259200369A6D /* Main.storyboard */; };
+		EDA2DB22240C259300369A6D /* AppetizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB21240C259300369A6D /* AppetizerTests.swift */; };
+		EDA2DB2D240C259300369A6D /* AppetizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB2C240C259300369A6D /* AppetizerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDA2DB1E240C259300369A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDA2DB00240C258E00369A6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDA2DB07240C258E00369A6D;
+			remoteInfo = Appetizer;
+		};
+		EDA2DB29240C259300369A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDA2DB00240C258E00369A6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDA2DB07240C258E00369A6D;
+			remoteInfo = Appetizer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EDA2DB08240C258E00369A6D /* Appetizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA2DB0B240C258E00369A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EDA2DB0D240C258E00369A6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EDA2DB0F240C259200369A6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDA2DB12240C259200369A6D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDA2DB15240C259200369A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDA2DB17240C259200369A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDA2DB18240C259200369A6D /* Appetizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Appetizer.entitlements; sourceTree = "<group>"; };
+		EDA2DB1D240C259300369A6D /* AppetizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppetizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA2DB21240C259300369A6D /* AppetizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTests.swift; sourceTree = "<group>"; };
+		EDA2DB23240C259300369A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDA2DB28240C259300369A6D /* AppetizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppetizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDA2DB2C240C259300369A6D /* AppetizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerUITests.swift; sourceTree = "<group>"; };
+		EDA2DB2E240C259300369A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDA2DB05240C258E00369A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA2DB1A240C259300369A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA2DB25240C259300369A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDA2DAFF240C258E00369A6D = {
+			isa = PBXGroup;
+			children = (
+				EDA2DB0A240C258E00369A6D /* Appetizer */,
+				EDA2DB20240C259300369A6D /* AppetizerTests */,
+				EDA2DB2B240C259300369A6D /* AppetizerUITests */,
+				EDA2DB09240C258E00369A6D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDA2DB09240C258E00369A6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDA2DB08240C258E00369A6D /* Appetizer.app */,
+				EDA2DB1D240C259300369A6D /* AppetizerTests.xctest */,
+				EDA2DB28240C259300369A6D /* AppetizerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDA2DB0A240C258E00369A6D /* Appetizer */ = {
+			isa = PBXGroup;
+			children = (
+				EDA2DB0B240C258E00369A6D /* AppDelegate.swift */,
+				EDA2DB0D240C258E00369A6D /* ContentView.swift */,
+				EDA2DB0F240C259200369A6D /* Assets.xcassets */,
+				EDA2DB14240C259200369A6D /* Main.storyboard */,
+				EDA2DB17240C259200369A6D /* Info.plist */,
+				EDA2DB18240C259200369A6D /* Appetizer.entitlements */,
+				EDA2DB11240C259200369A6D /* Preview Content */,
+			);
+			path = Appetizer;
+			sourceTree = "<group>";
+		};
+		EDA2DB11240C259200369A6D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EDA2DB12240C259200369A6D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EDA2DB20240C259300369A6D /* AppetizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDA2DB21240C259300369A6D /* AppetizerTests.swift */,
+				EDA2DB23240C259300369A6D /* Info.plist */,
+			);
+			path = AppetizerTests;
+			sourceTree = "<group>";
+		};
+		EDA2DB2B240C259300369A6D /* AppetizerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDA2DB2C240C259300369A6D /* AppetizerUITests.swift */,
+				EDA2DB2E240C259300369A6D /* Info.plist */,
+			);
+			path = AppetizerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDA2DB07240C258E00369A6D /* Appetizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDA2DB31240C259300369A6D /* Build configuration list for PBXNativeTarget "Appetizer" */;
+			buildPhases = (
+				EDA2DB04240C258E00369A6D /* Sources */,
+				EDA2DB05240C258E00369A6D /* Frameworks */,
+				EDA2DB06240C258E00369A6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Appetizer;
+			productName = Appetizer;
+			productReference = EDA2DB08240C258E00369A6D /* Appetizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EDA2DB1C240C259300369A6D /* AppetizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDA2DB34240C259300369A6D /* Build configuration list for PBXNativeTarget "AppetizerTests" */;
+			buildPhases = (
+				EDA2DB19240C259300369A6D /* Sources */,
+				EDA2DB1A240C259300369A6D /* Frameworks */,
+				EDA2DB1B240C259300369A6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDA2DB1F240C259300369A6D /* PBXTargetDependency */,
+			);
+			name = AppetizerTests;
+			productName = AppetizerTests;
+			productReference = EDA2DB1D240C259300369A6D /* AppetizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EDA2DB27240C259300369A6D /* AppetizerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDA2DB37240C259300369A6D /* Build configuration list for PBXNativeTarget "AppetizerUITests" */;
+			buildPhases = (
+				EDA2DB24240C259300369A6D /* Sources */,
+				EDA2DB25240C259300369A6D /* Frameworks */,
+				EDA2DB26240C259300369A6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDA2DB2A240C259300369A6D /* PBXTargetDependency */,
+			);
+			name = AppetizerUITests;
+			productName = AppetizerUITests;
+			productReference = EDA2DB28240C259300369A6D /* AppetizerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDA2DB00240C258E00369A6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Wilhelm Oks";
+				TargetAttributes = {
+					EDA2DB07240C258E00369A6D = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					EDA2DB1C240C259300369A6D = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EDA2DB07240C258E00369A6D;
+					};
+					EDA2DB27240C259300369A6D = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = EDA2DB07240C258E00369A6D;
+					};
+				};
+			};
+			buildConfigurationList = EDA2DB03240C258E00369A6D /* Build configuration list for PBXProject "Appetizer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDA2DAFF240C258E00369A6D;
+			productRefGroup = EDA2DB09240C258E00369A6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDA2DB07240C258E00369A6D /* Appetizer */,
+				EDA2DB1C240C259300369A6D /* AppetizerTests */,
+				EDA2DB27240C259300369A6D /* AppetizerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDA2DB06240C258E00369A6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA2DB16240C259200369A6D /* Main.storyboard in Resources */,
+				EDA2DB13240C259200369A6D /* Preview Assets.xcassets in Resources */,
+				EDA2DB10240C259200369A6D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA2DB1B240C259300369A6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA2DB26240C259300369A6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDA2DB04240C258E00369A6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */,
+				EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA2DB19240C259300369A6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA2DB22240C259300369A6D /* AppetizerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA2DB24240C259300369A6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA2DB2D240C259300369A6D /* AppetizerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDA2DB1F240C259300369A6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDA2DB07240C258E00369A6D /* Appetizer */;
+			targetProxy = EDA2DB1E240C259300369A6D /* PBXContainerItemProxy */;
+		};
+		EDA2DB2A240C259300369A6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDA2DB07240C258E00369A6D /* Appetizer */;
+			targetProxy = EDA2DB29240C259300369A6D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EDA2DB14240C259200369A6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDA2DB15240C259200369A6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDA2DB2F240C259300369A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EDA2DB30240C259300369A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		EDA2DB32240C259300369A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Appetizer/Appetizer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Appetizer/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Appetizer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = wok.Appetizer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EDA2DB33240C259300369A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Appetizer/Appetizer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Appetizer/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Appetizer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = wok.Appetizer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EDA2DB35240C259300369A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AppetizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = wok.AppetizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Appetizer.app/Contents/MacOS/Appetizer";
+			};
+			name = Debug;
+		};
+		EDA2DB36240C259300369A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AppetizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = wok.AppetizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Appetizer.app/Contents/MacOS/Appetizer";
+			};
+			name = Release;
+		};
+		EDA2DB38240C259300369A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AppetizerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = wok.AppetizerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Appetizer;
+			};
+			name = Debug;
+		};
+		EDA2DB39240C259300369A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AppetizerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = wok.AppetizerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Appetizer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDA2DB03240C258E00369A6D /* Build configuration list for PBXProject "Appetizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA2DB2F240C259300369A6D /* Debug */,
+				EDA2DB30240C259300369A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDA2DB31240C259300369A6D /* Build configuration list for PBXNativeTarget "Appetizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA2DB32240C259300369A6D /* Debug */,
+				EDA2DB33240C259300369A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDA2DB34240C259300369A6D /* Build configuration list for PBXNativeTarget "AppetizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA2DB35240C259300369A6D /* Debug */,
+				EDA2DB36240C259300369A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDA2DB37240C259300369A6D /* Build configuration list for PBXNativeTarget "AppetizerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDA2DB38240C259300369A6D /* Debug */,
+				EDA2DB39240C259300369A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDA2DB00240C258E00369A6D /* Project object */;
+}
