@@ -54,11 +54,23 @@ This will create many images in the `output` folder:
 
 The images have each size needed to fully specify an app icon on iOS for the iPhone and the iPad, including the 1024x1024 App Store icon.
 
+(The provided size arguments `100 100` are ignored for app icons)
+
 #### Single Icon
 
 `appetizer icon.png 100 100 --singleIcon output`
 
 This will create one image in the `output` folder: `icon.png`. The size will be 100x100.
+
+#### Icon Name
+
+By default, the generated icons will have the same name as the original icon.
+
+The name can be changed using the `--name` argument:
+
+`appetizer icon.png 100 100 --singleIcon output --name monkey`
+
+The generated icon will be `monkey.png`.
 
 #### Removing White Background
 
