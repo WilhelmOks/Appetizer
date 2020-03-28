@@ -16,6 +16,7 @@
 		EDA2DB2D240C259300369A6D /* AppetizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB2C240C259300369A6D /* AppetizerUITests.swift */; };
 		EDA2DB3B2415645B00369A6D /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB3A2415645B00369A6D /* TaskView.swift */; };
 		EDA2DB3F241565FE00369A6D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB3E241565FE00369A6D /* Task.swift */; };
+		EDA2DB4124157B0700369A6D /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB4024157B0700369A6D /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		EDA2DB2E240C259300369A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDA2DB3A2415645B00369A6D /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		EDA2DB3E241565FE00369A6D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		EDA2DB4024157B0700369A6D /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				EDA2DB3D241565E500369A6D /* Model */,
 				EDA2DB3C2415656800369A6D /* UI */,
 				EDA2DB0B240C258E00369A6D /* AppDelegate.swift */,
+				EDA2DB4024157B0700369A6D /* UserData.swift */,
 				EDA2DB0F240C259200369A6D /* Assets.xcassets */,
 				EDA2DB14240C259200369A6D /* Main.storyboard */,
 				EDA2DB17240C259200369A6D /* Info.plist */,
@@ -291,6 +294,7 @@
 				EDA2DB3F241565FE00369A6D /* Task.swift in Sources */,
 				EDA2DB3B2415645B00369A6D /* TaskView.swift in Sources */,
 				EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */,
+				EDA2DB4124157B0700369A6D /* UserData.swift in Sources */,
 				EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
