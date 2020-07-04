@@ -25,5 +25,8 @@ let package = Package(
         .testTarget(
             name: "AppetizerTests",
             dependencies: ["AppetizerCore"]),
+    ],
+    swiftLanguageVersions: [
+        .v5
     ]
 )
