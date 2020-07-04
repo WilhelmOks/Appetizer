@@ -24,7 +24,7 @@ struct ContentView: View {
                     TaskView(task: task)
                 }
             }
-        }.frame(minWidth: 400, minHeight: 300)
+        }.frame(minWidth: 300, minHeight: 200)
     }
 }
 
@@ -33,7 +33,7 @@ struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
         ContentView()
-            .frame(width: 400, height: 300, alignment: .center)
+            .frame(width: 300, height: 200, alignment: .center)
             .environmentObject(UserData(tasks: previewTasks))
     }
 }

@@ -22,4 +22,12 @@ final class UserData: ObservableObject  {
     func addTask() {
         self.tasks.append(.init(name: "Task \(Int.random(in: 0...9999))"))
     }
+    
+    func removeTask(_ task: Task) {
+        let index = tasks.firstIndex { $0.id == task.id }
+        if let index = index {
+            tasks.remove(at: index)
+        }
+        //self.tasks.removeAll() { $0.id == task.id }
+    }
 }

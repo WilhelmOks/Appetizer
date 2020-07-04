@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED7F463D242F907500648CC4 /* OutputTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7F463C242F907500648CC4 /* OutputTask.swift */; };
 		EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB0B240C258E00369A6D /* AppDelegate.swift */; };
 		EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB0D240C258E00369A6D /* ContentView.swift */; };
 		EDA2DB10240C259200369A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA2DB0F240C259200369A6D /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED7F463C242F907500648CC4 /* OutputTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputTask.swift; sourceTree = "<group>"; };
 		EDA2DB08240C258E00369A6D /* Appetizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA2DB0B240C258E00369A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDA2DB0D240C258E00369A6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				EDA2DB3E241565FE00369A6D /* Task.swift */,
+				ED7F463C242F907500648CC4 /* OutputTask.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */,
 				EDA2DB4124157B0700369A6D /* UserData.swift in Sources */,
 				EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */,
+				ED7F463D242F907500648CC4 /* OutputTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

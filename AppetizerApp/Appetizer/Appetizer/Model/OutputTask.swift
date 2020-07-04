@@ -1,17 +1,16 @@
 //
-//  Task.swift
+//  OutputTask.swift
 //  Appetizer
 //
-//  Created by Wilhelm Oks on 08.03.20.
+//  Created by Wilhelm Oks on 28.03.20.
 //  Copyright © 2020 Wilhelm Oks. All rights reserved.
 //
 
 import Foundation
 
-class Task : Identifiable {
+class OutputTask : Identifiable {
     var id: String { name }
     var name: String
-    var outputTasks: [OutputTask] = []
     
     init(name: String) {
         self.name = name

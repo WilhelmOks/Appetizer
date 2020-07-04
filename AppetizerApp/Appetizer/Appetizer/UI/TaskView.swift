@@ -9,15 +9,26 @@
 import SwiftUI
 
 struct TaskView: View {
+    @EnvironmentObject var userData: UserData
     var task: Task
     
     var body: some View {
-        Text(task.name).font(.headline).padding(8)
+        HStack {
+            Button(action: { self.userData.removeTask(self.task) }) {
+                Text("-")
+            }
+            Group() {
+                Text("-").padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8)).background(Color.white)
+            }.onTapGesture { self.userData.removeTask(self.task) }
+            Text(task.name).font(.headline).padding(8)
+            Spacer()
+        }
     }
 }
 
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
         TaskView(task: Task(name: "Task 1"))
+            .frame(width: 300, height: nil, alignment: .center)
     }
 }
