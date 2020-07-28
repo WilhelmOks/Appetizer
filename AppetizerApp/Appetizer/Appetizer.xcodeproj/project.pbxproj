@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ED7F463D242F907500648CC4 /* OutputTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7F463C242F907500648CC4 /* OutputTask.swift */; };
+		ED7FE78C24D08D6600B000D0 /* OutputTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7FE78B24D08D6600B000D0 /* OutputTaskView.swift */; };
+		ED7FE78E24D08F4600B000D0 /* OutputTaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7FE78D24D08F4600B000D0 /* OutputTaskListView.swift */; };
 		EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB0B240C258E00369A6D /* AppDelegate.swift */; };
 		EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB0D240C258E00369A6D /* ContentView.swift */; };
 		EDA2DB10240C259200369A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA2DB0F240C259200369A6D /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		ED7F463C242F907500648CC4 /* OutputTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputTask.swift; sourceTree = "<group>"; };
+		ED7FE78B24D08D6600B000D0 /* OutputTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputTaskView.swift; sourceTree = "<group>"; };
+		ED7FE78D24D08F4600B000D0 /* OutputTaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputTaskListView.swift; sourceTree = "<group>"; };
 		EDA2DB08240C258E00369A6D /* Appetizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA2DB0B240C258E00369A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDA2DB0D240C258E00369A6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				EDA2DB3D241565E500369A6D /* Model */,
-				EDA2DB3C2415656800369A6D /* UI */,
+				EDA2DB3C2415656800369A6D /* View */,
 				EDA2DB0B240C258E00369A6D /* AppDelegate.swift */,
 				EDA2DB4024157B0700369A6D /* UserData.swift */,
 				EDA2DB0F240C259200369A6D /* Assets.xcassets */,
@@ -145,13 +149,15 @@
 			path = AppetizerUITests;
 			sourceTree = "<group>";
 		};
-		EDA2DB3C2415656800369A6D /* UI */ = {
+		EDA2DB3C2415656800369A6D /* View */ = {
 			isa = PBXGroup;
 			children = (
 				EDA2DB0D240C258E00369A6D /* ContentView.swift */,
+				ED7FE78D24D08F4600B000D0 /* OutputTaskListView.swift */,
 				EDA2DB3A2415645B00369A6D /* TaskView.swift */,
+				ED7FE78B24D08D6600B000D0 /* OutputTaskView.swift */,
 			);
-			path = UI;
+			path = View;
 			sourceTree = "<group>";
 		};
 		EDA2DB3D241565E500369A6D /* Model */ = {
@@ -296,9 +302,11 @@
 			files = (
 				EDA2DB3F241565FE00369A6D /* Task.swift in Sources */,
 				EDA2DB3B2415645B00369A6D /* TaskView.swift in Sources */,
+				ED7FE78C24D08D6600B000D0 /* OutputTaskView.swift in Sources */,
 				EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */,
 				EDA2DB4124157B0700369A6D /* UserData.swift in Sources */,
 				EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */,
+				ED7FE78E24D08F4600B000D0 /* OutputTaskListView.swift in Sources */,
 				ED7F463D242F907500648CC4 /* OutputTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

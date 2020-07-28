@@ -8,12 +8,29 @@
 
 import Foundation
 
-class Task : Identifiable {
+class Task : Identifiable, ObservableObject {
     var id: String { name }
     var name: String
-    var outputTasks: [OutputTask] = []
+    @Published var outputTasks: [OutputTask] = []
     
     init(name: String) {
         self.name = name
+    }
+    
+    func with(outputTasks: [OutputTask]) -> Self {
+        self.outputTasks = outputTasks
+        return self
+    }
+    
+    func addOutputTask() {
+        let newOutputTask = OutputTask(name: String(Int.random(in: 0..<100000)))
+        outputTasks.append(newOutputTask)
+    }
+    
+    func removeOutputTask(_ outputTask: OutputTask) {
+        let index = outputTasks.firstIndex { $0.id == outputTask.id }
+        if let index = index {
+            outputTasks.remove(at: index)
+        }
     }
 }
