@@ -37,6 +37,6 @@ final class UserData: ObservableObject  {
     }
     
     func addOutputTask(forTask task: Task) {
-        self.tasks.first(where: { $0.id == task.id })?.addOutputTask()
+        self.tasks.first{ $0.id == task.id }?.addOutputTask()
     }
 }

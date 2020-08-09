@@ -11,7 +11,8 @@ import SwiftUI
 struct OutputTaskListView: View {
     @EnvironmentObject var userData: UserData
     @State var task: Task
-    //@State var outputTasks: [OutputTask]
+    @Binding var outputTasks: [OutputTask]
+    @State var disabled = false
 
     var body: some View {
         VStack {
@@ -22,12 +23,20 @@ struct OutputTaskListView: View {
                 }
             }
             HStack {
-                Button(action: { self.task.addOutputTask() }) {
+                Button(action: {
+                    self.task.addOutputTask()
+                    self.update()
+                }) {
                     Text("+")
                 }
                 Spacer()
             }
-        }
+        }.disabled(disabled)
+    }
+    
+    func update() {
+        self.disabled.toggle()
+        self.disabled.toggle()
     }
 }
 
@@ -39,7 +48,7 @@ struct OutputTaskListView_Previews: PreviewProvider {
         ])
     
     static var previews: some View {
-        OutputTaskListView(task: task1)
+        OutputTaskListView(task: task1, outputTasks: $task1.outputTasks)
         .frame(width: 300, height: 200, alignment: .center)
     }
 }

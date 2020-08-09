@@ -24,7 +24,7 @@ struct TaskView: View {
                 Spacer()
             }
             VStack {
-                OutputTaskListView(task: task)
+                OutputTaskListView(task: task, outputTasks: $task.outputTasks)
                 Spacer()
             }
         }.padding(8).border(Color.secondary)
