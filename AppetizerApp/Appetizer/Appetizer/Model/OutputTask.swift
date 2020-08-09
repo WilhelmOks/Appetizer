@@ -8,9 +8,9 @@
 
 import Foundation
 
-class OutputTask : Identifiable {
+class OutputTask : Identifiable, ObservableObject {
     var id: String { name }
-    var name: String
+    @Published var name: String
     
     init(name: String) {
         self.name = name

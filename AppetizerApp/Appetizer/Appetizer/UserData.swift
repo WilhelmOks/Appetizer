@@ -19,6 +19,11 @@ final class UserData: ObservableObject  {
         self.tasks = tasks
     }
     
+    func task(id: String) -> Task {
+        let index = tasks.firstIndex { $0.id == id }!
+        return tasks[index]
+    }
+    
     func addTask() {
         self.tasks.append(.init(name: "Task \(Int.random(in: 0...9999))"))
     }

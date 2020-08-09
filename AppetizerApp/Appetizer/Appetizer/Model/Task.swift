@@ -10,7 +10,7 @@ import Foundation
 
 class Task : Identifiable, ObservableObject {
     var id: String { name }
-    var name: String
+    @Published var name: String
     @Published var outputTasks: [OutputTask] = []
     
     init(name: String) {
