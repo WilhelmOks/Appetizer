@@ -25,8 +25,11 @@ struct OutputTaskView: View {
 }
 
 struct OutputTaskView_Previews: PreviewProvider {
+    @State static var task1 = Task(name: "Task 1")
+    @State static var outputTask1 = OutputTask(name: "OutputTask 1")
+    
     static var previews: some View {
-        OutputTaskView(task: Task(name: "Task 1"), outputTask: OutputTask(name: "OutputTask 1"))
+        OutputTaskView(task: task1, outputTask: outputTask1)
         .frame(width: 300, height: nil, alignment: .center)
     }
 }
