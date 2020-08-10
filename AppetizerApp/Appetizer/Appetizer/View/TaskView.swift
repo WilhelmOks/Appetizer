@@ -29,13 +29,13 @@ struct TaskView: View {
                 }
                 TextField("input image path", text: $task.inputPath)
                 HStack(alignment: .top) {
-                    Text("image")
+                    Image("inputImage").frame(width: 64, height: 64, alignment: .center).border(Color.secondary)
                     OutputTaskListView(task: task)
                 }
                 Spacer()
             }
             Spacer()
-        }.padding(8).border(Color.secondary).textFieldStyle( SquareBorderTextFieldStyle())
+        }.padding(8).border(Color.secondary)
     }
 }
 

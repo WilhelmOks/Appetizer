@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class UserData: ObservableObject  {
+final class UserData: ObservableObject {
     @Published var tasks: [Task] = []
     
     init() {

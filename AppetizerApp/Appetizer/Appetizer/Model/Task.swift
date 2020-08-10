@@ -13,7 +13,11 @@ class Task : Identifiable, ObservableObject {
     @Published var name: String
     @Published var outputTasks: [OutputTask] = []
     @Published var enabled: Bool = true
-    @Published var inputPath: String = ""
+    @Published var inputPath: String = "" {
+        didSet {
+            NSLog("inputPath: \(inputPath)")
+        }
+    }
     
     init(name: String) {
         self.name = name
