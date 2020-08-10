@@ -15,7 +15,7 @@ class Task : Identifiable, ObservableObject {
     @Published var enabled: Bool = true
     @Published var inputPath: String = "" {
         didSet {
-            NSLog("inputPath: \(inputPath)")
+            NSLog("\(name): \(inputPath)")
         }
     }
     
@@ -49,5 +49,27 @@ class Task : Identifiable, ObservableObject {
         if let index = index {
             outputTasks.remove(at: index)
         }
+    }
+}
+
+class TaskVM : ObservableObject, Identifiable {
+    @Published var task: Task
+    
+    var name: String { task.name }
+    
+    var enabled: Bool {
+        get { task.enabled }
+        set { task.enabled = newValue }
+    }
+    
+    var inputPathTextFieldContent: String {
+        get { task.inputPath }
+        set { task.inputPath = newValue }
+    }
+    //@Published var inputPathTextFieldContent: String
+    
+    init(_ task: Task) {
+        self.task = task
+        //self.inputPathTextFieldContent = task.inputPath
     }
 }

@@ -21,9 +21,9 @@ struct ContentView: View {
                     }
                 }.padding(8)
                 ScrollView {
-                    ForEach(userData.tasks) { task in
-                        TaskView(task: task).padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
-                    }                    
+                    ForEach(userData.tasks) { model in
+                        TaskView(model: model).padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
+                    }
                 }
             }
         }.frame(minWidth: 300, minHeight: 400)

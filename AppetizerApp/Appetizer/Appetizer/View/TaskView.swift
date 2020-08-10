@@ -10,27 +10,31 @@ import SwiftUI
 
 struct TaskView: View {
     @EnvironmentObject var userData: UserData
-    @State var task: Task
+    //@ObservedObject var viewModel: TaskVM
+    @ObservedObject var model: Task
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Button(action: { self.userData.removeTask(self.task) }) {
+                    Button(action: { self.userData.removeTask(self.model)
+                    }) {
                         Text("-")
                     }
-                    Button(action: { self.userData.cloneTask(self.task) }) {
+                    Button(action: { self.userData.cloneTask(self.model)
+                    }) {
                         Text("clone")
                     }
-                    Button(action: { self.userData.toggleEnabled(task: self.task) }) {
-                        Text(self.task.enabled ? "enabled" : "disabled")
+                    Button(action: { self.userData.toggleEnabled(task: self.model)
+                    }) {
+                        Text(self.model.enabled ? "enabled" : "disabled")
                     }
-                    Text(task.name).font(.headline)
+                    Text(model.name).font(.headline)
                 }
-                TextField("input image path", text: $task.inputPath)
+                TextField("input image path", text: $model.inputPath)
                 HStack(alignment: .top) {
                     Image("inputImage").frame(width: 64, height: 64, alignment: .center).border(Color.secondary)
-                    OutputTaskListView(task: task)
+                    OutputTaskListView(task: model)
                 }
                 Spacer()
             }
@@ -46,7 +50,7 @@ struct TaskView_Previews: PreviewProvider {
     ])
     
     static var previews: some View {
-        TaskView(task: task1)
+        TaskView(model: task1)
             .frame(width: 300, height: nil, alignment: .center)
     }
 }

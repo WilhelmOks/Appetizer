@@ -11,6 +11,8 @@ import Foundation
 final class UserData: ObservableObject {
     @Published var tasks: [Task] = []
     
+    //var taskViewModels: [TaskVM] { tasks.map { TaskVM($0) } }
+    
     init() {
         
     }
