@@ -14,7 +14,7 @@ struct TaskView: View {
     
     var body: some View {
         HStack {
-            VStack {
+            VStack(alignment: .leading) {
                 HStack {
                     Button(action: { self.userData.removeTask(self.task) }) {
                         Text("-")
@@ -22,6 +22,8 @@ struct TaskView: View {
                     Button(action: { self.userData.cloneTask(self.task) }) {
                         Text("clone")
                     }
+                }
+                HStack {
                     Text(task.name).font(.headline)
                 }
                 Spacer()
@@ -30,6 +32,7 @@ struct TaskView: View {
                 OutputTaskListView(task: task)
                 Spacer()
             }
+            Spacer()
         }.padding(8).border(Color.secondary)
     }
 }
