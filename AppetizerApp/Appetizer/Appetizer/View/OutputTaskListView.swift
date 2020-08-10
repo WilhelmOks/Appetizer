@@ -11,14 +11,13 @@ import SwiftUI
 struct OutputTaskListView: View {
     @EnvironmentObject var userData: UserData
     @State var task: Task
-    @Binding var outputTasks: [OutputTask]
     @State var disabled = false
 
     var body: some View {
         VStack {
             ForEach(task.outputTasks) { outputTask in
                 HStack {
-                    OutputTaskView(task: self.task, outputTask: self.task.outputTasks[self.task.outputTasks.firstIndex(where: { $0.id == outputTask.id })!])
+                    OutputTaskView(task: self.task, outputTask: outputTask)
                     Spacer()
                 }
             }
@@ -48,7 +47,7 @@ struct OutputTaskListView_Previews: PreviewProvider {
         ])
     
     static var previews: some View {
-        OutputTaskListView(task: task1, outputTasks: $task1.outputTasks)
+        OutputTaskListView(task: task1)
         .frame(width: 300, height: 200, alignment: .center)
     }
 }

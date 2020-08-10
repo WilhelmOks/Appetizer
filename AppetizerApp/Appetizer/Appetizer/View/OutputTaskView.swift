@@ -12,6 +12,7 @@ struct OutputTaskView: View {
     @EnvironmentObject var userData: UserData
     @State var task: Task
     @State var outputTask: OutputTask
+    //@State var parentView: OutputTaskListView
     
     var body: some View {
         HStack {
