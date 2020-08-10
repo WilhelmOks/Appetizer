@@ -22,14 +22,13 @@ struct TaskView: View {
                     Button(action: { self.userData.cloneTask(self.task) }) {
                         Text("clone")
                     }
-                }
-                HStack {
                     Text(task.name).font(.headline)
                 }
-                Spacer()
-            }
-            VStack {
-                OutputTaskListView(task: task)
+                Text("path")
+                HStack(alignment: .top) {
+                    Text("image")
+                    OutputTaskListView(task: task)
+                }
                 Spacer()
             }
             Spacer()
