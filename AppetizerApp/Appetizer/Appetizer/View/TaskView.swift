@@ -31,15 +31,34 @@ struct TaskView: View {
                     }
                     Text(model.name).font(.headline)
                 }
-                TextField("input image path", text: $model.inputPath)
+                TextField("input image path", text: $model.inputPath).disabled(true)
                 HStack(alignment: .top) {
-                    Image("inputImage").frame(width: 64, height: 64, alignment: .center).border(Color.secondary)
+                    Image(nsImage: NSImage(contentsOfFile: model.inputPath) ?? NSImage())
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 64, height: 64)
+                        .border(Color.secondary)
                     OutputTaskListView(task: model)
                 }
                 Spacer()
             }
             Spacer()
-        }.padding(8).border(Color.secondary)
+        }.padding(8).border(Color.secondary).onDrop(of: ["public.file-url"], isTargeted: nil, perform: handleOnDrop(providers:))
+    }
+    
+    private func handleOnDrop(providers: [NSItemProvider]) -> Bool {
+        if let item = providers.first {
+            item.loadItem(forTypeIdentifier: "public.file-url", options: nil) { (urlData, error) in
+                DispatchQueue.main.async {
+                    if let urlData = urlData as? Data {
+                        let url = NSURL(absoluteURLWithDataRepresentation: urlData, relativeTo: nil) as URL
+                        self.model.inputPath = url.path
+                    }
+                }
+            }
+            return true
+        }
+        return false
     }
 }
 
