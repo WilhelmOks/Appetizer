@@ -17,7 +17,7 @@ struct OutputTaskListView: View {
         VStack {
             ForEach(task.outputTasks) { outputTask in
                 HStack {
-                    OutputTaskView(task: self.task, outputTask: outputTask)
+                    OutputTaskView(task: self.task, outputTask: outputTask, parentView: self)
                     Spacer()
                 }
             }
