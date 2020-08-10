@@ -19,6 +19,9 @@ struct TaskView: View {
                     Button(action: { self.userData.removeTask(self.task) }) {
                         Text("-")
                     }
+                    Button(action: { self.userData.cloneTask(self.task) }) {
+                        Text("clone")
+                    }
                     Text(task.name).font(.headline)
                 }
                 Spacer()

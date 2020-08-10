@@ -12,9 +12,16 @@ class Task : Identifiable, ObservableObject {
     var id: String { name }
     @Published var name: String
     @Published var outputTasks: [OutputTask] = []
+    @Published var enabled: Bool = true
     
     init(name: String) {
         self.name = name
+    }
+    
+    init(_ task: Task) {
+        name = task.name
+        outputTasks = task.outputTasks.map { OutputTask($0) }
+        enabled = task.enabled
     }
     
     func with(outputTasks: [OutputTask]) -> Self {

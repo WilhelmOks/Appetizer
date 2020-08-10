@@ -15,4 +15,8 @@ class OutputTask : Identifiable, ObservableObject {
     init(name: String) {
         self.name = name
     }
+    
+    init(_ outputTask: OutputTask) {
+        name = outputTask.name
+    }
 }

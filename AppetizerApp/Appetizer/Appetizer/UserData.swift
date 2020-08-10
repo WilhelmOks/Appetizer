@@ -33,7 +33,14 @@ final class UserData: ObservableObject  {
         if let index = index {
             tasks.remove(at: index)
         }
-        //self.tasks.removeAll() { $0.id == task.id }
+    }
+    
+    func cloneTask(_ task: Task) {
+        let index = tasks.firstIndex { $0.id == task.id }
+        if let index = index {
+            let cloned = Task(tasks[index])
+            tasks.insert(cloned, at: index + 1)
+        }
     }
     
     func addOutputTask(forTask task: Task) {
