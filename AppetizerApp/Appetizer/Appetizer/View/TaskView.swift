@@ -22,6 +22,9 @@ struct TaskView: View {
                     Button(action: { self.userData.cloneTask(self.task) }) {
                         Text("clone")
                     }
+                    Button(action: { self.userData.toggleEnabled(task: self.task) }) {
+                        Text(self.task.enabled ? "enabled" : "disabled")
+                    }
                     Text(task.name).font(.headline)
                 }
                 Text("path")

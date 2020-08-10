@@ -29,6 +29,10 @@ class Task : Identifiable, ObservableObject {
         return self
     }
     
+    func toggleEnabled() {
+        self.enabled.toggle()
+    }
+    
     func addOutputTask() {
         let newOutputTask = OutputTask(name: String(Int.random(in: 0..<100000)))
         outputTasks.append(newOutputTask)

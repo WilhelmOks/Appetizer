@@ -46,4 +46,15 @@ final class UserData: ObservableObject  {
     func addOutputTask(forTask task: Task) {
         self.tasks.first{ $0.id == task.id }?.addOutputTask()
     }
+    
+    func toggleEnabled(task: Task) {
+        let index = tasks.firstIndex { $0.id == task.id }
+        if let index = index {
+            tasks[index].toggleEnabled()
+            
+            //trigger list change:
+            tasks.append(Task(name: ""))
+            tasks.removeLast()
+        }
+    }
 }
