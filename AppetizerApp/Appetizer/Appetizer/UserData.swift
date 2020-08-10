@@ -19,7 +19,7 @@ final class UserData: ObservableObject  {
         self.tasks = tasks
     }
     
-    func task(id: String) -> Task {
+    func task(id: UUID) -> Task {
         let index = tasks.firstIndex { $0.id == id }!
         return tasks[index]
     }

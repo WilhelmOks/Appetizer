@@ -27,7 +27,7 @@ struct TaskView: View {
                     }
                     Text(task.name).font(.headline)
                 }
-                Text("path")
+                TextField("input image path", text: $task.inputPath)
                 HStack(alignment: .top) {
                     Text("image")
                     OutputTaskListView(task: task)
@@ -35,7 +35,7 @@ struct TaskView: View {
                 Spacer()
             }
             Spacer()
-        }.padding(8).border(Color.secondary)
+        }.padding(8).border(Color.secondary).textFieldStyle( SquareBorderTextFieldStyle())
     }
 }
 

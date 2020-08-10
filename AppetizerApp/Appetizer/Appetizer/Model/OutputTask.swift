@@ -9,7 +9,7 @@
 import Foundation
 
 class OutputTask : Identifiable, ObservableObject {
-    var id: String { name }
+    let id = UUID()
     @Published var name: String
     
     init(name: String) {

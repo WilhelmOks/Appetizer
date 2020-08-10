@@ -20,11 +20,13 @@ struct ContentView: View {
                         Text("+")
                     }
                 }.padding(8)
-                List(userData.tasks) { task in
-                    TaskView(task: task)
+                ScrollView {
+                    ForEach(userData.tasks) { task in
+                        TaskView(task: task).padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
+                    }                    
                 }
             }
-        }.frame(minWidth: 300, minHeight: 200)
+        }.frame(minWidth: 300, minHeight: 400)
     }
 }
 
@@ -33,7 +35,7 @@ struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
         ContentView()
-            .frame(width: 300, height: 200, alignment: .center)
+            .frame(width: 300, height: 400, alignment: .center)
             .environmentObject(UserData(tasks: previewTasks))
     }
 }
