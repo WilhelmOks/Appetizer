@@ -13,11 +13,7 @@ class Task : Identifiable, ObservableObject {
     @Published var name: String
     @Published var outputTasks: [OutputTask] = []
     @Published var enabled: Bool = true
-    @Published var inputPath: String = "" {
-        didSet {
-            NSLog("\(name): \(inputPath)")
-        }
-    }
+    @Published var inputPath: String = ""
     
     init(name: String) {
         self.name = name
@@ -42,6 +38,10 @@ class Task : Identifiable, ObservableObject {
     func addOutputTask() {
         let newOutputTask = OutputTask(name: String(Int.random(in: 0..<100000)))
         outputTasks.append(newOutputTask)
+    }
+    
+    func addOutputTask(_ outputTask: OutputTask) {
+        outputTasks.append(outputTask)
     }
     
     func removeOutputTask(_ outputTask: OutputTask) {

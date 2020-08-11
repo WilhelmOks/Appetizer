@@ -10,20 +10,20 @@ import SwiftUI
 
 struct OutputTaskListView: View {
     @EnvironmentObject var userData: UserData
-    @State var task: Task
+    @Binding var task: Task
     @State var disabled = false
 
     var body: some View {
         VStack {
             ForEach(task.outputTasks) { outputTask in
                 HStack {
-                    OutputTaskView(task: self.task, outputTask: outputTask, parentView: self)
+                    OutputTaskView(task: self.$task, outputTask: outputTask, parentView: self)
                     Spacer()
                 }
             }
             HStack {
                 Button(action: {
-                    self.task.addOutputTask()
+                    self.userData.addOutputTask(forTask: self.task)
                     self.update()
                 }) {
                     Text("+")
@@ -47,7 +47,7 @@ struct OutputTaskListView_Previews: PreviewProvider {
         ])
     
     static var previews: some View {
-        OutputTaskListView(task: task1)
+        OutputTaskListView(task: $task1)
         .frame(width: 300, height: 200, alignment: .center)
     }
 }

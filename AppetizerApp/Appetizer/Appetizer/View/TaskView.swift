@@ -11,7 +11,8 @@ import SwiftUI
 struct TaskView: View {
     @EnvironmentObject var userData: UserData
     //@ObservedObject var viewModel: TaskVM
-    @ObservedObject var model: Task
+    //@ObservedObject var model: Task
+    @State var model: Task
     
     var body: some View {
         HStack {
@@ -36,7 +37,7 @@ struct TaskView: View {
                     IconImageView(filePath: $model.inputPath)
                         .frame(width: 64, height: 64)
                         .border(Color.secondary)
-                    OutputTaskListView(task: model)
+                    OutputTaskListView(task: $model)
                 }
                 Spacer()
             }
