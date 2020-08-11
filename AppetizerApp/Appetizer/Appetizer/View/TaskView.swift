@@ -33,9 +33,7 @@ struct TaskView: View {
                 }
                 TextField("input image path", text: $model.inputPath).disabled(true)
                 HStack(alignment: .top) {
-                    Image(nsImage: NSImage(contentsOfFile: model.inputPath) ?? NSImage())
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                    IconImageView(filePath: $model.inputPath)
                         .frame(width: 64, height: 64)
                         .border(Color.secondary)
                     OutputTaskListView(task: model)
