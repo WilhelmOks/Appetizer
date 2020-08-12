@@ -12,13 +12,21 @@ struct TaskView: View {
     @EnvironmentObject var userData: UserData
     //@ObservedObject var viewModel: TaskVM
     //@ObservedObject var model: Task
-    @State var model: Task
+    @Binding var model: Task
+    
+    private var deleteClosure: (_ model: Task) -> ()
+    
+    init(model: Binding<Task>, delete: @escaping (_ model: Task) -> () = { m in }) {
+        self._model = model
+        self.deleteClosure = delete
+    }
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Button(action: { self.userData.removeTask(self.model)
+                    Button(action: { //self.userData.removeTask(self.model)
+                        self.deleteClosure(self.model)
                     }) {
                         Text("-")
                     }
@@ -68,7 +76,7 @@ struct TaskView_Previews: PreviewProvider {
     ])
     
     static var previews: some View {
-        TaskView(model: task1)
+        TaskView(model: $task1)
             .frame(width: 300, height: nil, alignment: .center)
     }
 }

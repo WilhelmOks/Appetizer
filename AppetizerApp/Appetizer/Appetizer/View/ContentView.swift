@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var userData: UserData
+    @State var disabled = false
     
     var body: some View {
         Group {
@@ -21,13 +22,23 @@ struct ContentView: View {
                     }
                 }.padding(8)
                 ScrollView {
-                    ForEach(userData.tasks, id: \.id) { model in
-                        TaskView(model: model)
+                    ForEach(userData.tasks.filter { !$0.deleted }) { model in
+                        TaskView(
+                            model: self.$userData.tasks[self.userData.tasks.firstIndex(where: {$0.id == model.id})!],
+                            delete:
+                                { m in self.userData.removeTask(m)
+                                    self.update()
+                        })
                         .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
                     }
                 }
             }
-        }.frame(minWidth: 300, minHeight: 400)
+        }.disabled(disabled).frame(minWidth: 300, minHeight: 400)
+    }
+    
+    func update() {
+        disabled.toggle()
+        disabled.toggle()
     }
 }
 

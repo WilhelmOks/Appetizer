@@ -53,9 +53,14 @@ final class UserData: ObservableObject {
     }
     
     func removeTask(_ task: Task) {
+        /*
         let index = tasks.firstIndex { $0.id == task.id }
         if let index = index {
             tasks.remove(at: index)
+        }*/
+        
+        if let task = tasks.first(where: { $0.id == task.id }) {
+            task.deleted = true
         }
     }
     
@@ -87,87 +92,3 @@ final class UserData: ObservableObject {
         }
     }
 }
-
-/**
- Is not allowed to contain duplicate ids.
- */
-public class ObservableList<Element: Identifiable>: ObservableObject {
-    @Published var ids: [Element.ID] = []
-    @Published var elementsDict: [Element.ID : Element] = [:]
-
-    var elements: [Element] { ids.map { elementsDict[$0]! } }
-    
-    init() {
-        
-    }
-    
-    init(_ elements: [Element]) {
-        append(contentsOf: elements)
-    }
-    
-    func append(_ element: Element) {
-        ids.append(element.id)
-        elementsDict[element.id] = element
-    }
-    
-    func append(contentsOf array: [Element]) {
-        ids.append(contentsOf: array.map { $0.id })
-        for element in array {
-            elementsDict[element.id] = element
-        }
-    }
-    
-    func insert(_ element: Element, at index: Int) {
-        ids.insert(element.id, at: index)
-        elementsDict[element.id] = element
-    }
-    
-    func remove(at index: Int) {
-        let id = ids[index]
-        ids.remove(at: index)
-        elementsDict[id] = nil
-    }
-    
-    func removeFirst() {
-        let id = ids.removeFirst()
-        elementsDict[id] = nil
-    }
-    
-    func removeLast() {
-        let id = ids.removeLast()
-        elementsDict[id] = nil
-    }
-    
-    func element(id: Element.ID) -> Element {
-        return elementsDict[id]!
-    }
-    
-    subscript(unchecked key: Element.ID) -> Element {
-        get {
-            guard let result = self.elementsDict[key] else {
-                fatalError("This element does not exist.")
-            }
-            return result
-        }
-        set {
-            self.elementsDict[key] = newValue
-        }
-    }
-}
-
-/*
-extension Dictionary where Value: Identifiable {
-    typealias Key = Value.ID
-    subscript(unchecked key: Key) -> Value {
-        get {
-            guard let result = self[key] else {
-                fatalError("This element does not exist.")
-            }
-            return result
-        }
-        set {
-            self[key] = newValue
-        }
-    }
-}
-*/

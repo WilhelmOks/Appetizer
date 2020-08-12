@@ -14,6 +14,7 @@ class Task : Identifiable, ObservableObject {
     @Published var outputTasks: [OutputTask] = []
     @Published var enabled: Bool = true
     @Published var inputPath: String = ""
+    @Published var deleted = false
     
     init(name: String) {
         self.name = name
@@ -24,6 +25,7 @@ class Task : Identifiable, ObservableObject {
         outputTasks = task.outputTasks.map { OutputTask($0) }
         enabled = task.enabled
         inputPath = task.inputPath
+        deleted = task.deleted
     }
     
     func with(outputTasks: [OutputTask]) -> Self {
