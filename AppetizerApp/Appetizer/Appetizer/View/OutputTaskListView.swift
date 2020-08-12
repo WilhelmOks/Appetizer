@@ -15,9 +15,16 @@ struct OutputTaskListView: View {
 
     var body: some View {
         VStack {
-            ForEach(task.outputTasks) { outputTask in
+            ForEach(task.outputTasks.filter { !$0.deleted }, id: \.id) { outputTask in
                 HStack {
-                    OutputTaskView(task: self.$task, outputTask: outputTask, parentView: self)
+                    OutputTaskView(
+                        task: self.$task, outputTask: self.$task.outputTasks[self.task.outputTasks.firstIndex(where: { $0.id == outputTask.id })!],
+                        parentView: self,
+                        deleteClosure: { m in
+                            self.task.removeOutputTask(m)
+                            self.update()
+                        }
+                    )
                     Spacer()
                 }
             }

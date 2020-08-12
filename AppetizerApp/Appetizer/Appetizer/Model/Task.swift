@@ -51,6 +51,8 @@ class Task : Identifiable, ObservableObject {
         if let index = index {
             outputTasks.remove(at: index)
         }
+        
+        //outputTasks.first { $0.id == outputTask.id }?.deleted = true
     }
 }
 

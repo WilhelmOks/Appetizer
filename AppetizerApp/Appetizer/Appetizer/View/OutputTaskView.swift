@@ -11,13 +11,20 @@ import SwiftUI
 struct OutputTaskView: View {
     @EnvironmentObject var userData: UserData
     @Binding var task: Task
-    @State var outputTask: OutputTask
+    @Binding var outputTask: OutputTask
     @State var parentView: OutputTaskListView
+    
+    var deleteClosure: (_ outputTask: OutputTask) -> ()
+
+    /*init(task: Binding<Task>, outputTask: Binding<OutputTask>, parentView: OutputTaskListView, delete: @escaping (_ model: Task) -> () = { m in }) {
+        
+    }*/
     
     var body: some View {
         HStack {
-            Button(action: { self.task.removeOutputTask(self.outputTask)
-                self.parentView.update()
+            Button(action: { //self.task.removeOutputTask(self.outputTask)
+                //self.parentView.update()
+                self.deleteClosure(self.outputTask)
             }) {
                 Text("-")
             }
@@ -37,7 +44,7 @@ struct OutputTaskView_Previews: PreviewProvider {
     @State static var parentView = OutputTaskListView(task: $task1)
     
     static var previews: some View {
-        OutputTaskView(task: $task1, outputTask: outputTask1, parentView: parentView)
+        OutputTaskView(task: $task1, outputTask: $outputTask1, parentView: parentView, deleteClosure: { m in })
         .frame(width: 300, height: nil, alignment: .center)
     }
 }

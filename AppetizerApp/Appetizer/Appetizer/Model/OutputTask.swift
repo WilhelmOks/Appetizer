@@ -17,6 +17,7 @@ class OutputTask : Identifiable, ObservableObject {
             NotificationCenter.default.post(Notification(name: .init("OutputTaskDidChange")))
         }
     }
+    @Published var deleted = false
         
     init(name: String) {
         self.name = name
@@ -26,6 +27,7 @@ class OutputTask : Identifiable, ObservableObject {
         name = outputTask.name
         enabled = outputTask.enabled
         selectedTypeIndex = outputTask.selectedTypeIndex
+        deleted = outputTask.deleted
     }
     
     func update() {
