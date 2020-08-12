@@ -15,11 +15,10 @@ struct OutputTaskListView: View {
 
     var body: some View {
         VStack {
-            ForEach(task.outputTasks.filter { !$0.deleted }, id: \.id) { outputTask in
+            ForEach(0..<task.outputTasks.count, id: \.self) { index in
                 HStack {
                     OutputTaskView(
-                        task: self.$task, outputTask: self.$task.outputTasks[self.task.outputTasks.firstIndex(where: { $0.id == outputTask.id })!],
-                        parentView: self,
+                        task: self.$task, outputTask: self.$task.outputTasks[index],
                         deleteClosure: { m in
                             self.task.removeOutputTask(m)
                             self.update()
