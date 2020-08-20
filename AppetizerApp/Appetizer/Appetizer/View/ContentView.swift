@@ -31,6 +31,12 @@ struct ContentView: View {
                         })
                         .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
                     }
+                    HStack {
+                        Button(action: { self.userData.addTask() }) {
+                            Text("+")
+                        }
+                        Spacer()
+                    }.padding(EdgeInsets(top: 4, leading: 8, bottom: 8, trailing: 8))
                 }
             }
         }.disabled(disabled).frame(minWidth: 300, minHeight: 400)
