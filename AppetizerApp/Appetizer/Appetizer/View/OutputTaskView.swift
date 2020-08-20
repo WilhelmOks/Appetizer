@@ -12,6 +12,7 @@ struct OutputTaskView: View {
     @EnvironmentObject var userData: UserData
     @Binding var task: Task
     @Binding var outputTask: OutputTask
+    @State var outputPath: String = ""
     
     var deleteClosure: (_ outputTask: OutputTask) -> ()
 
@@ -20,18 +21,21 @@ struct OutputTaskView: View {
     }*/
     
     var body: some View {
-        HStack {
+        HStack(alignment: .top, spacing: 4) {
             Button(action: { //self.task.removeOutputTask(self.outputTask)
                 //self.parentView.update()
                 self.deleteClosure(self.outputTask)
             }) {
                 Text("-")
             }
-            Picker(selection: $outputTask.selectedTypeIndex, label: Text("")) {
-                ForEach(0..<UserData.outputTypes.count) {
-                    Text(UserData.outputTypes[$0].displayName)
-                }
+            VStack(alignment: .leading, spacing: 4) {
+                Picker(selection: $outputTask.selectedTypeIndex, label: Text("")) {
+                    ForEach(0..<UserData.outputTypes.count) {
+                        Text(UserData.outputTypes[$0].displayName)
+                    }
                 }.frame(width: 150, height: nil)
+                TextField("output image path", text: $outputPath).disabled(true).padding(.leading, 8)
+            }
             Spacer()
         }
     }
