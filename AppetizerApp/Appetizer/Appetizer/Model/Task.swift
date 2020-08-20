@@ -7,17 +7,27 @@
 //
 
 import Foundation
+import Combine
 
 class Task : Identifiable, ObservableObject {
     let id = UUID()
     @Published var name: String
     @Published var outputTasks: [OutputTask] = []
-    @Published var enabled: Bool = true
+    @Published var enabled: Bool = true {
+        didSet {
+            objectWillChange.send()
+        }
+    }
     @Published var inputPath: String = ""
     @Published var deleted = false
     
+    let objectWillChange = PassthroughSubject<Void, Never>()
+    private var cancellables: Set<AnyCancellable> = []
+    
     init(name: String) {
         self.name = name
+        
+        self.objectWillChange.sink { NSLog("enabled: \(self.enabled)") }.store(in: &cancellables)
     }
     
     init(_ task: Task) {
