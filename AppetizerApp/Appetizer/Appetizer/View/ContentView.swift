@@ -14,13 +14,16 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            VStack {
-                HStack {
-                    Text("Appetizer")
-                    Button(action: { self.userData.addTask() }) {
-                        Text("+")
-                    }
-                }.padding(8)
+            VStack(alignment: .center, spacing: 0) {
+                ZStack {
+                    LinearGradient(gradient: Gradient(colors: [Color.clear, Color(white: 0).opacity(0.18)]), startPoint: .top, endPoint: .bottom)
+                    HStack() {
+                        Button(action: {  }) {
+                            Text("generate")
+                        }
+                        Spacer()
+                    }.padding([.leading, .trailing], 8)
+                }.frame(height: 40)
                 ScrollView {
                     ForEach(userData.tasks.filter { !$0.deleted }) { model in
                         TaskView(
@@ -29,7 +32,8 @@ struct ContentView: View {
                                 { m in self.userData.removeTask(m)
                                     self.update()
                         })
-                        .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
+                        .padding([.top, .bottom], 4)
+                        .padding([.leading, .trailing], 8)
                     }
                     HStack {
                         Button(action: { self.userData.addTask() }) {
