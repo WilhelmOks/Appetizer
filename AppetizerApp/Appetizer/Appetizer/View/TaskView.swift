@@ -34,9 +34,8 @@ struct TaskView: View {
                     }) {
                         Text("clone")
                     }
-                    Button(action: { self.userData.toggleEnabled(task: self.model)
-                    }) {
-                        Text(self.model.enabled ? "enabled" : "disabled")
+                    Toggle(isOn: self.$model.enabled) {
+                        Text("enabled")
                     }
                     Text(model.name).font(.headline)
                 }
