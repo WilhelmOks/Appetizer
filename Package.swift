@@ -10,7 +10,7 @@ let package = Package(
     ],
     dependencies: [
         // used for command line argument parsing
-        .package(url: "https://github.com/apple/swift-package-manager.git", from: "0.3.0"),
+        .package(url: "https://github.com/apple/swift-package-manager.git", .exact("0.4.0")),
         
         // used to make NSColor from a hex string
         .package(url: "https://github.com/WilhelmOks/HexColor.git", from: "1.0.1")
@@ -25,5 +25,8 @@ let package = Package(
         .testTarget(
             name: "AppetizerTests",
             dependencies: ["AppetizerCore"]),
+    ],
+    swiftLanguageVersions: [
+        .v5
     ]
 )
