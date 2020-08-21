@@ -109,6 +109,8 @@ This can be used to remove unwanted borders: <img src="Images/s_with_border.png"
 
 Download an appetizer binary from the release section and copy it into the folder `/usr/local/bin` so that it can be launched from anywhere in the command line.
 
+Run `sudo chmod 777 /usr/local/bin/appetizer` in the command line to make the file executable.
+
 ### Compile the source
 
 You can compile the source using the command line:
