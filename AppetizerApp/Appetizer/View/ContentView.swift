@@ -20,7 +20,7 @@ struct ContentView: View {
                     HStack() {
                         Button(action: {  }) {
                             Text("generate")
-                        }
+                        }.disabled(!userData.isGenerateButtonEnabled)
                         Spacer()
                     }.padding([.leading, .trailing], 8)
                 }.frame(height: 40)

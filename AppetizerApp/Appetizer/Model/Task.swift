@@ -12,22 +12,40 @@ import Combine
 class Task : Identifiable, ObservableObject {
     let id = UUID()
     @Published var name: String
-    @Published var outputTasks: [OutputTask] = []
+    @Published var outputTasks: [OutputTask] = [] {
+        didSet {
+            objectWillChange.send()
+        }
+    }
     @Published var enabled: Bool = true {
         didSet {
             objectWillChange.send()
         }
     }
-    @Published var inputPath: String = ""
-    @Published var deleted = false
+    @Published var inputPath: String = "" {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+    @Published var deleted = false {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+    
+    var existingOuputTasks: [OutputTask] {
+        outputTasks.filter { !$0.deleted }
+    }
+    
+    var isReady: Bool {
+        !existingOuputTasks.isEmpty && existingOuputTasks.allSatisfy{ $0.isReady } && !inputPath.isEmpty || !enabled
+    }
     
     let objectWillChange = PassthroughSubject<Void, Never>()
     private var cancellables: Set<AnyCancellable> = []
     
     init(name: String) {
         self.name = name
-        
-        self.objectWillChange.sink { NSLog("enabled: \(self.enabled)") }.store(in: &cancellables)
     }
     
     init(_ task: Task) {
@@ -50,19 +68,20 @@ class Task : Identifiable, ObservableObject {
     func addOutputTask() {
         let newOutputTask = OutputTask(name: String(Int.random(in: 0..<100000)))
         outputTasks.append(newOutputTask)
+        objectWillChange.send()
     }
     
     func addOutputTask(_ outputTask: OutputTask) {
         outputTasks.append(outputTask)
+        objectWillChange.send()
     }
     
     func removeOutputTask(_ outputTask: OutputTask) {
         let index = outputTasks.firstIndex { $0.id == outputTask.id }
         if let index = index {
             outputTasks.remove(at: index)
+            objectWillChange.send()
         }
-        
-        //outputTasks.first { $0.id == outputTask.id }?.deleted = true
     }
 }
 

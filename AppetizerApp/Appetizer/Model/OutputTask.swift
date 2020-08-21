@@ -20,6 +20,10 @@ class OutputTask : Identifiable, ObservableObject {
     @Published var outputPath: String = ""
     @Published var deleted = false
     
+    var isReady: Bool {
+        !outputPath.isEmpty || !enabled
+    }
+    
     init(name: String) {
         self.name = name
     }
