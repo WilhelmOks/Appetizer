@@ -12,13 +12,8 @@ struct OutputTaskView: View {
     @EnvironmentObject var userData: UserData
     @Binding var task: Task
     @Binding var outputTask: OutputTask
-    @State var outputPath: String = ""
     
     var deleteClosure: (_ outputTask: OutputTask) -> ()
-
-    /*init(task: Binding<Task>, outputTask: Binding<OutputTask>, parentView: OutputTaskListView, delete: @escaping (_ model: Task) -> () = { m in }) {
-        
-    }*/
     
     var body: some View {
         HStack(alignment: .top, spacing: 4) {
@@ -33,10 +28,40 @@ struct OutputTaskView: View {
                     ForEach(0..<UserData.outputTypes.count) {
                         Text(UserData.outputTypes[$0].displayName)
                     }
-                }.frame(width: 150, height: nil)
-                TextField("output image path", text: $outputPath).disabled(true).padding(.leading, 8)
+                }
+                .frame(width: 150, height: nil)
+                
+                HStack {
+                    TextField("output image path", text: $outputTask.outputPath)
+                    .truncationMode(.head)
+                    .disabled(true)
+                    .padding(.leading, 8)
+                    
+                    Button(action: { self.pickOutputFile() }) {
+                        Text("pick")
+                    }
+                }
             }
             Spacer()
+        }
+    }
+    
+    private func pickOutputFile() {
+        let dialog = NSSavePanel()
+        
+        dialog.title = "Choose a file for the output image"
+        dialog.showsResizeIndicator = true
+        dialog.showsHiddenFiles = false
+        dialog.allowedFileTypes = ["png"]
+        dialog.canCreateDirectories = true
+        dialog.treatsFilePackagesAsDirectories = true
+        
+        guard dialog.runModal() == .OK else { return }
+        guard let result = dialog.url else { return }
+        let path = result.path
+        outputTask.outputPath = path
+        DispatchQueue.main.async {
+            self.userData.update() //needed for the case when an existing file is selected
         }
     }
 }

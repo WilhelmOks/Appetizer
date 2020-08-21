@@ -91,4 +91,9 @@ final class UserData: ObservableObject {
             tasks.removeLast()
         }
     }
+    
+    func update() {
+        tasks.append(Task(name: ""))
+        tasks.removeLast()
+    }
 }
