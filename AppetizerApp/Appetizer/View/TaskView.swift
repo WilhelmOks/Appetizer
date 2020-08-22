@@ -44,14 +44,20 @@ struct TaskView: View {
                     IconImageView(filePath: $model.inputPath)
                         .frame(width: 64, height: 64)
                         .border(Color.secondary)
-                    GroupBox(label: Text("output")) {
+                    GroupBox() {
                         OutputTaskListView(task: $model)
                     }
                 }
                 Spacer()
             }
             Spacer()
-        }.padding(8).border(Color.secondary).onDrop(of: ["public.file-url"], isTargeted: nil, perform: handleOnDrop(providers:))
+        }
+        .padding(6)
+        .overlay(
+            RoundedRectangle(cornerRadius: 3)
+            .stroke(Color.black.opacity(0.2), lineWidth: 1)
+        )
+        .onDrop(of: ["public.file-url"], isTargeted: nil, perform: handleOnDrop(providers:))
     }
     
     private func handleOnDrop(providers: [NSItemProvider]) -> Bool {
