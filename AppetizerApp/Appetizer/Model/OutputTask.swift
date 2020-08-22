@@ -8,7 +8,7 @@
 
 import Foundation
 
-class OutputTask : Identifiable, ObservableObject {
+final class OutputTask : Identifiable, ObservableObject {
     let id = UUID()
     @Published var name: String
     @Published var enabled: Bool = true

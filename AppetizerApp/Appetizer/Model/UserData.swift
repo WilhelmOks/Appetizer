@@ -109,4 +109,8 @@ final class UserData: ObservableObject {
         tasks.removeLast()
         objectWillChange.send()
     }
+    
+    func generateImages() {
+        Generator.shared.execute(tasks.filter{ !$0.deleted && $0.enabled && $0.isReady })
+    }
 }

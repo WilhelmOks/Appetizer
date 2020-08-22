@@ -29,11 +29,9 @@ struct OutputTaskListView: View {
                 }
             }
             HStack {
-                Button(action: {
+                TextButton(text: "+") {
                     self.userData.addOutputTask(forTask: self.task)
                     self.update()
-                }) {
-                    Text("+")
                 }
                 .padding(.leading, 4)
                 Spacer()

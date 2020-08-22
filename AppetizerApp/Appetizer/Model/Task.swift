@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-class Task : Identifiable, ObservableObject {
+final class Task : Identifiable, ObservableObject {
     let id = UUID()
     @Published var name: String
     @Published var outputTasks: [OutputTask] = [] {
@@ -85,7 +85,7 @@ class Task : Identifiable, ObservableObject {
     }
 }
 
-class TaskVM : ObservableObject, Identifiable {
+final class TaskVM : ObservableObject, Identifiable {
     @Published var task: Task
     
     var name: String { task.name }

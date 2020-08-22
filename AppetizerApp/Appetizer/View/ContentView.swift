@@ -18,9 +18,10 @@ struct ContentView: View {
                 ZStack {
                     LinearGradient(gradient: Gradient(colors: [Color.clear, Color(white: 0).opacity(0.18)]), startPoint: .top, endPoint: .bottom)
                     HStack() {
-                        Button(action: {  }) {
-                            Text("generate")
-                        }.disabled(!userData.isGenerateButtonEnabled)
+                        TextButton(text: "generate") {
+                            self.userData.generateImages()
+                        }
+                        .disabled(!userData.isGenerateButtonEnabled)
                         Spacer()
                     }.padding([.leading, .trailing], 8)
                 }.frame(height: 40)
@@ -36,8 +37,8 @@ struct ContentView: View {
                         .padding([.leading, .trailing], 8)
                     }
                     HStack {
-                        Button(action: { self.userData.addTask() }) {
-                            Text("+")
+                        TextButton(text: "+") {
+                            self.userData.addTask()
                         }
                         Spacer()
                     }.padding(EdgeInsets(top: 4, leading: 8, bottom: 8, trailing: 8))

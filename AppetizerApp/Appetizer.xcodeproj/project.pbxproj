@@ -24,6 +24,9 @@
 		EDA2DB3B2415645B00369A6D /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB3A2415645B00369A6D /* TaskView.swift */; };
 		EDA2DB3F241565FE00369A6D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB3E241565FE00369A6D /* Task.swift */; };
 		EDA2DB4124157B0700369A6D /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB4024157B0700369A6D /* UserData.swift */; };
+		EDBDF07824F130500045A5C2 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBDF07724F130500045A5C2 /* Generator.swift */; };
+		EDBDF07A24F132B80045A5C2 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBDF07924F132B80045A5C2 /* TextButton.swift */; };
+		EDCD4EB724EFF9C40023846C /* NSImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD4EB624EFF9C40023846C /* NSImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		EDA2DB3A2415645B00369A6D /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		EDA2DB3E241565FE00369A6D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		EDA2DB4024157B0700369A6D /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		EDBDF07724F130500045A5C2 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		EDBDF07924F132B80045A5C2 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		EDCD4EB624EFF9C40023846C /* NSImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSImageExtension.swift; path = ../Sources/AppetizerCore/NSImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 		EDA2DAFF240C258E00369A6D = {
 			isa = PBXGroup;
 			children = (
+				EDCD4EB524EFF96B0023846C /* Core */,
 				EDA2DB0A240C258E00369A6D /* Appetizer */,
 				EDA2DB20240C259300369A6D /* AppetizerTests */,
 				EDA2DB2B240C259300369A6D /* AppetizerUITests */,
@@ -132,6 +139,7 @@
 				EDA2DB17240C259200369A6D /* Info.plist */,
 				EDA2DB18240C259200369A6D /* Appetizer.entitlements */,
 				ED633A3124E2FF4A00AF0F37 /* ObservableList.swift */,
+				EDBDF07724F130500045A5C2 /* Generator.swift */,
 				EDA2DB3D241565E500369A6D /* Model */,
 				EDA2DB3C2415656800369A6D /* View */,
 				ED633A2A24E292ED00AF0F37 /* Images */,
@@ -174,6 +182,7 @@
 				ED7FE78D24D08F4600B000D0 /* OutputTaskListView.swift */,
 				ED7FE78B24D08D6600B000D0 /* OutputTaskView.swift */,
 				ED633A2D24E2951600AF0F37 /* IconImageView.swift */,
+				EDBDF07924F132B80045A5C2 /* TextButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +196,14 @@
 				ED633A2F24E2A16700AF0F37 /* OutputType.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EDCD4EB524EFF96B0023846C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EDCD4EB624EFF9C40023846C /* NSImageExtension.swift */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +340,8 @@
 			files = (
 				EDA2DB3F241565FE00369A6D /* Task.swift in Sources */,
 				EDA2DB3B2415645B00369A6D /* TaskView.swift in Sources */,
+				EDBDF07A24F132B80045A5C2 /* TextButton.swift in Sources */,
+				EDCD4EB724EFF9C40023846C /* NSImageExtension.swift in Sources */,
 				ED7FE78C24D08D6600B000D0 /* OutputTaskView.swift in Sources */,
 				EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */,
 				EDA2DB4124157B0700369A6D /* UserData.swift in Sources */,
@@ -332,6 +351,7 @@
 				ED7F463D242F907500648CC4 /* OutputTask.swift in Sources */,
 				ED633A3024E2A16700AF0F37 /* OutputType.swift in Sources */,
 				ED633A2E24E2951600AF0F37 /* IconImageView.swift in Sources */,
+				EDBDF07824F130500045A5C2 /* Generator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

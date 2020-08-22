@@ -25,14 +25,11 @@ struct TaskView: View {
         HStack {
             VStack(alignment: .leading) {
                 HStack {
-                    Button(action: { //self.userData.removeTask(self.model)
+                    TextButton(text: "-") {
                         self.deleteClosure(self.model)
-                    }) {
-                        Text("-")
                     }
-                    Button(action: { self.userData.cloneTask(self.model)
-                    }) {
-                        Text("clone")
+                    TextButton(text: "clone") {
+                        self.userData.cloneTask(self.model)
                     }
                     Toggle(isOn: self.$model.enabled) {
                         Text("enabled")

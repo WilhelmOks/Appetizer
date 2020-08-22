@@ -17,11 +17,8 @@ struct OutputTaskView: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 4) {
-            Button(action: { //self.task.removeOutputTask(self.outputTask)
-                //self.parentView.update()
+            TextButton(text: "-") {
                 self.deleteClosure(self.outputTask)
-            }) {
-                Text("-")
             }
             VStack(alignment: .leading, spacing: 4) {
                 Picker(selection: $outputTask.selectedTypeIndex, label: Text("")) {
@@ -37,8 +34,8 @@ struct OutputTaskView: View {
                     .disabled(true)
                     .padding(.leading, 8)
                     
-                    Button(action: { self.pickOutputFile() }) {
-                        Text("pick")
+                    TextButton(text: "pick") {
+                        self.pickOutputFile()
                     }
                 }
             }
