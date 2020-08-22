@@ -34,34 +34,13 @@ final class UserData: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     init() {
-        registerNotifications()
         objectWillChange.sink { _ in
             self.isGenerateButtonEnabled = self.isReadyToGenerate
-            print("self.isReadyToGenerate: \(self.isReadyToGenerate)")
         }.store(in: &cancellables)
     }
     
     init(tasks: [Task]) {
         self.tasks.append(contentsOf: tasks)
-        registerNotifications()
-    }
-    
-    func registerNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(outputTaskDidChange), name: NSNotification.Name.init(rawValue: "OutputTaskDidChange"), object: nil)
-    }
-    
-    @objc func outputTaskDidChange() {
-        /*
-        for task in tasks {
-            task.toggleEnabled()
-            task.toggleEnabled()
-            /*
-            for outputTask in task.outputTasks {
-                outputTask.update()
-            }
-            */
-        }
-        */
     }
     
     func subscribeToChanges(_ task: Task) {

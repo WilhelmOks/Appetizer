@@ -44,7 +44,9 @@ struct TaskView: View {
                     IconImageView(filePath: $model.inputPath)
                         .frame(width: 64, height: 64)
                         .border(Color.secondary)
-                    OutputTaskListView(task: $model)
+                    GroupBox(label: Text("output")) {
+                        OutputTaskListView(task: $model)
+                    }
                 }
                 Spacer()
             }

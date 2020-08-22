@@ -36,7 +36,7 @@ struct OutputTaskListView: View {
                 }
                 Spacer()
             }
-        }.padding(8).disabled(disabled).border(Color.secondary)
+        }.padding(0).disabled(disabled)
     }
     
     func update() {
