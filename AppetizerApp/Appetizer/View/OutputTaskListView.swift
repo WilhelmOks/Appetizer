@@ -17,13 +17,14 @@ struct OutputTaskListView: View {
         VStack {
             ForEach(0..<task.outputTasks.count, id: \.self) { index in
                 HStack {
-                    OutputTaskView(
-                        task: self.$task, outputTask: self.$task.outputTasks[index],
-                        deleteClosure: { m in
-                            self.task.removeOutputTask(m)
-                            self.update()
-                        }
-                    )
+                    GroupBox {
+                        OutputTaskView(
+                            task: self.$task, outputTask: self.$task.outputTasks[index],
+                            deleteClosure: { m in
+                                self.task.removeOutputTask(m)
+                                self.update()
+                        })
+                    }
                     Spacer()
                 }
             }
@@ -34,6 +35,7 @@ struct OutputTaskListView: View {
                 }) {
                     Text("+")
                 }
+                .padding(.leading, 4)
                 Spacer()
             }
         }.padding(0).disabled(disabled)
