@@ -26,6 +26,7 @@
 		EDA2DB4124157B0700369A6D /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB4024157B0700369A6D /* UserData.swift */; };
 		EDBDF07824F130500045A5C2 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBDF07724F130500045A5C2 /* Generator.swift */; };
 		EDBDF07A24F132B80045A5C2 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBDF07924F132B80045A5C2 /* TextButton.swift */; };
+		EDBDF07C24F13FB30045A5C2 /* MutableForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBDF07B24F13FB30045A5C2 /* MutableForEach.swift */; };
 		EDCD4EB724EFF9C40023846C /* NSImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD4EB624EFF9C40023846C /* NSImageExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		EDA2DB4024157B0700369A6D /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		EDBDF07724F130500045A5C2 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		EDBDF07924F132B80045A5C2 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		EDBDF07B24F13FB30045A5C2 /* MutableForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableForEach.swift; sourceTree = "<group>"; };
 		EDCD4EB624EFF9C40023846C /* NSImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSImageExtension.swift; path = ../Sources/AppetizerCore/NSImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +185,7 @@
 				ED7FE78B24D08D6600B000D0 /* OutputTaskView.swift */,
 				ED633A2D24E2951600AF0F37 /* IconImageView.swift */,
 				EDBDF07924F132B80045A5C2 /* TextButton.swift */,
+				EDBDF07B24F13FB30045A5C2 /* MutableForEach.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				EDCD4EB724EFF9C40023846C /* NSImageExtension.swift in Sources */,
 				ED7FE78C24D08D6600B000D0 /* OutputTaskView.swift in Sources */,
 				EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */,
+				EDBDF07C24F13FB30045A5C2 /* MutableForEach.swift in Sources */,
 				EDA2DB4124157B0700369A6D /* UserData.swift in Sources */,
 				EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */,
 				ED633A3224E2FF4A00AF0F37 /* ObservableList.swift in Sources */,
