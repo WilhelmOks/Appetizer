@@ -18,7 +18,7 @@ public extension NSImage {
         case dataRepresentationError
     }
 
-    static func from(filePath path: String, sizeX: Int, sizeY: Int) throws -> NSImage {
+    static func from(filePath path: String) throws -> NSImage {
         guard let image = NSImage(contentsOfFile: path) else {
             throw ImageFileReadError.invalidImageFile(path)
         }

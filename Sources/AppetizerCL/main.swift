@@ -44,7 +44,7 @@ func main() {
         
         let inputFilePathString = inputFilePath.path.pathString
         
-        var bigImage = try NSImage.from(filePath: inputFilePathString, sizeX: sizeX, sizeY: sizeY)
+        var bigImage = try NSImage.from(filePath: inputFilePathString)
         
         if clearWhite {
             bigImage = bigImage.clearedWhite()
