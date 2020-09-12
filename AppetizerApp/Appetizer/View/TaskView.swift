@@ -79,6 +79,6 @@ struct TaskView_Previews: PreviewProvider {
     
     static var previews: some View {
         TaskView(model: $task1)
-            .frame(width: 300, height: nil, alignment: .center)
+            .frame(width: 600, height: nil, alignment: .center)
     }
 }

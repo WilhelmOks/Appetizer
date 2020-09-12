@@ -98,15 +98,15 @@ final class UserData: ObservableObject {
             tasks[index].toggleEnabled()
             
             //trigger list change:
-            tasks.append(Task(name: ""))
-            tasks.removeLast()
+            //tasks.append(Task(name: ""))
+            //tasks.removeLast()
         }
         objectWillChange.send()
     }
     
     func update() {
-        tasks.append(Task(name: ""))
-        tasks.removeLast()
+        //tasks.append(Task(name: ""))
+        //tasks.removeLast()
         objectWillChange.send()
     }
     
