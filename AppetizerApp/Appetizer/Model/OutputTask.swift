@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import AppKit
+import HexNSColor
 
 final class OutputTask : Identifiable, ObservableObject {
     let id = UUID()
-    @Published var name: String
+    @Published var name: String //TODO: remove
     @Published var enabled: Bool = true
     @Published var selectedTypeIndex: Int = 0 {
         didSet {
@@ -18,11 +20,37 @@ final class OutputTask : Identifiable, ObservableObject {
         }
     }
     @Published var outputPath: String = ""
+    @Published var sizeXString: String = ""
+    @Published var sizeYString: String = ""
+    @Published var paddingString: String = ""
+    @Published var colorString: String = ""
+    @Published var clearWhite: Bool = false
+    @Published var androidFolderPrefixString: String = ""
+    @Published var fileNameString: String = ""
     @Published var deleted = false
     
     var isReady: Bool {
-        !outputPath.isEmpty || !enabled
+        let isValid = !outputPath.isEmpty && (!needsSize || sizeX != nil && sizeY != nil)
+        return isValid || !enabled
     }
+    
+    var selectedType: OutputType {
+        OutputType.allCases[selectedTypeIndex]
+    }
+    
+    var sizeX: Int? { Int(sizeXString) }
+    var sizeY: Int? { Int(sizeYString) }
+    
+    var padding: Int { Int(paddingString) ?? 0 }
+    
+    var color: NSColor? { NSColor.fromHexString(colorString) }
+    
+    let androidFolderPrefixDefault = "drawable"
+    var androidFolderPrefix: String {
+        androidFolderPrefixString.isEmpty ? androidFolderPrefixDefault : androidFolderPrefixString
+    }
+    
+    var needsSize: Bool { selectedType != .iOSAppIcon }
     
     init(name: String) {
         self.name = name
@@ -33,6 +61,13 @@ final class OutputTask : Identifiable, ObservableObject {
         enabled = outputTask.enabled
         selectedTypeIndex = outputTask.selectedTypeIndex
         outputPath = outputTask.outputPath
+        sizeXString = outputTask.sizeXString
+        sizeYString = outputTask.sizeYString
+        paddingString = outputTask.paddingString
+        colorString = outputTask.colorString
+        clearWhite = outputTask.clearWhite
+        androidFolderPrefixString = outputTask.androidFolderPrefixString
+        fileNameString = outputTask.fileNameString
         deleted = outputTask.deleted
     }
     

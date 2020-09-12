@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,7 @@
 		EDBDF07824F130500045A5C2 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBDF07724F130500045A5C2 /* Generator.swift */; };
 		EDBDF07A24F132B80045A5C2 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBDF07924F132B80045A5C2 /* TextButton.swift */; };
 		EDBDF07C24F13FB30045A5C2 /* MutableForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBDF07B24F13FB30045A5C2 /* MutableForEach.swift */; };
+		EDBDF0BB2507B6870045A5C2 /* HexNSColor in Frameworks */ = {isa = PBXBuildFile; productRef = EDBDF0BA2507B6870045A5C2 /* HexNSColor */; };
 		EDCD4EB724EFF9C40023846C /* NSImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCD4EB624EFF9C40023846C /* NSImageExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBDF0BB2507B6870045A5C2 /* HexNSColor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +227,9 @@
 			dependencies = (
 			);
 			name = Appetizer;
+			packageProductDependencies = (
+				EDBDF0BA2507B6870045A5C2 /* HexNSColor */,
+			);
 			productName = Appetizer;
 			productReference = EDA2DB08240C258E00369A6D /* Appetizer.app */;
 			productType = "com.apple.product-type.application";
@@ -297,6 +302,9 @@
 				Base,
 			);
 			mainGroup = EDA2DAFF240C258E00369A6D;
+			packageReferences = (
+				EDBDF0B92507B6870045A5C2 /* XCRemoteSwiftPackageReference "HexColor" */,
+			);
 			productRefGroup = EDA2DB09240C258E00369A6D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -679,6 +687,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDBDF0B92507B6870045A5C2 /* XCRemoteSwiftPackageReference "HexColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WilhelmOks/HexColor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDBDF0BA2507B6870045A5C2 /* HexNSColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDBDF0B92507B6870045A5C2 /* XCRemoteSwiftPackageReference "HexColor" */;
+			productName = HexNSColor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDA2DB00240C258E00369A6D /* Project object */;
 }
