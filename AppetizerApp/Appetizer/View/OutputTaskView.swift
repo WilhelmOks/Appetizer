@@ -12,6 +12,7 @@ struct OutputTaskView: View {
     @EnvironmentObject var userData: UserData
     @Binding var task: Task
     @Binding var outputTask: OutputTask
+    @State var previewImage: NSImage
     
     var deleteClosure: (_ outputTask: OutputTask) -> ()
     
@@ -84,7 +85,7 @@ struct OutputTaskView: View {
                     Spacer()
                 }
                 
-                HStack {
+                HStack(alignment: .bottom) {
                     TextField("output image path", text: $outputTask.outputPath)
                     .truncationMode(.head)
                     .disabled(true)
@@ -93,6 +94,10 @@ struct OutputTaskView: View {
                     TextButton(text: "pick") {
                         self.pickOutputFile()
                     }
+                    
+                    ImageView(image: $outputTask.previewImage)
+                    .frame(width: 48, height: 48)
+                    .border(Color.secondary)
                 }
             }
             Spacer()
@@ -121,11 +126,11 @@ struct OutputTaskView: View {
 
 struct OutputTaskView_Previews: PreviewProvider {
     @State static var task1 = Task(name: "Task 1")
-    @State static var outputTask1 = OutputTask()
+    @State static var outputTask1 = OutputTask(task: task1)
     //@State static var parentView = OutputTaskListView(task: $task1)
     
     static var previews: some View {
-        OutputTaskView(task: $task1, outputTask: $outputTask1, deleteClosure: { m in })
+        OutputTaskView(task: $task1, outputTask: $outputTask1, previewImage: NSImage(), deleteClosure: { m in })
         .frame(width: 550, height: nil, alignment: .center)
     }
 }

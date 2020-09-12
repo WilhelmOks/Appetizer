@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		ED633A2C24E2936900AF0F37 /* image_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ED633A2B24E2936800AF0F37 /* image_bg.png */; };
-		ED633A2E24E2951600AF0F37 /* IconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633A2D24E2951600AF0F37 /* IconImageView.swift */; };
+		ED633A2E24E2951600AF0F37 /* FileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633A2D24E2951600AF0F37 /* FileImageView.swift */; };
 		ED633A3024E2A16700AF0F37 /* OutputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633A2F24E2A16700AF0F37 /* OutputType.swift */; };
 		ED633A3224E2FF4A00AF0F37 /* ObservableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633A3124E2FF4A00AF0F37 /* ObservableList.swift */; };
 		ED7F463D242F907500648CC4 /* OutputTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7F463C242F907500648CC4 /* OutputTask.swift */; };
 		ED7FE78C24D08D6600B000D0 /* OutputTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7FE78B24D08D6600B000D0 /* OutputTaskView.swift */; };
 		ED7FE78E24D08F4600B000D0 /* OutputTaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7FE78D24D08F4600B000D0 /* OutputTaskListView.swift */; };
+		EDA0BE93250D464500B96724 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA0BE92250D464500B96724 /* ImageView.swift */; };
 		EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB0B240C258E00369A6D /* AppDelegate.swift */; };
 		EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2DB0D240C258E00369A6D /* ContentView.swift */; };
 		EDA2DB10240C259200369A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDA2DB0F240C259200369A6D /* Assets.xcassets */; };
@@ -50,12 +51,13 @@
 
 /* Begin PBXFileReference section */
 		ED633A2B24E2936800AF0F37 /* image_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_bg.png; sourceTree = "<group>"; };
-		ED633A2D24E2951600AF0F37 /* IconImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
+		ED633A2D24E2951600AF0F37 /* FileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileImageView.swift; sourceTree = "<group>"; };
 		ED633A2F24E2A16700AF0F37 /* OutputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputType.swift; sourceTree = "<group>"; };
 		ED633A3124E2FF4A00AF0F37 /* ObservableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableList.swift; sourceTree = "<group>"; };
 		ED7F463C242F907500648CC4 /* OutputTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputTask.swift; sourceTree = "<group>"; };
 		ED7FE78B24D08D6600B000D0 /* OutputTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputTaskView.swift; sourceTree = "<group>"; };
 		ED7FE78D24D08F4600B000D0 /* OutputTaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputTaskListView.swift; sourceTree = "<group>"; };
+		EDA0BE92250D464500B96724 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		EDA2DB08240C258E00369A6D /* Appetizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDA2DB0B240C258E00369A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDA2DB0D240C258E00369A6D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -185,7 +187,8 @@
 				EDA2DB3A2415645B00369A6D /* TaskView.swift */,
 				ED7FE78D24D08F4600B000D0 /* OutputTaskListView.swift */,
 				ED7FE78B24D08D6600B000D0 /* OutputTaskView.swift */,
-				ED633A2D24E2951600AF0F37 /* IconImageView.swift */,
+				ED633A2D24E2951600AF0F37 /* FileImageView.swift */,
+				EDA0BE92250D464500B96724 /* ImageView.swift */,
 				EDBDF07924F132B80045A5C2 /* TextButton.swift */,
 				EDBDF07B24F13FB30045A5C2 /* MutableForEach.swift */,
 			);
@@ -357,12 +360,13 @@
 				EDA2DB0E240C258E00369A6D /* ContentView.swift in Sources */,
 				EDBDF07C24F13FB30045A5C2 /* MutableForEach.swift in Sources */,
 				EDA2DB4124157B0700369A6D /* UserData.swift in Sources */,
+				EDA0BE93250D464500B96724 /* ImageView.swift in Sources */,
 				EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */,
 				ED633A3224E2FF4A00AF0F37 /* ObservableList.swift in Sources */,
 				ED7FE78E24D08F4600B000D0 /* OutputTaskListView.swift in Sources */,
 				ED7F463D242F907500648CC4 /* OutputTask.swift in Sources */,
 				ED633A3024E2A16700AF0F37 /* OutputType.swift in Sources */,
-				ED633A2E24E2951600AF0F37 /* IconImageView.swift in Sources */,
+				ED633A2E24E2951600AF0F37 /* FileImageView.swift in Sources */,
 				EDBDF07824F130500045A5C2 /* Generator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

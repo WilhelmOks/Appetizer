@@ -8,25 +8,13 @@
 
 import SwiftUI
 
-struct IconImageView: View {
+struct FileImageView: View {
     @Binding var filePath: String
     
     static let blankImage = NSImage()
-    static var cachedImage: [String: NSImage] = [:]
     static let bgImage = NSImage(imageLiteralResourceName:  "image_bg")
     
     var image: NSImage {
-        /*
-        if let image = Self.cachedImage[filePath] {
-            return image
-        }
-        
-        let image = NSImage(contentsOfFile: filePath) ?? Self.blankImage
-        
-        Self.cachedImage[filePath] = image
-        
-        return image
-        */
         NSImage(contentsOfFile: filePath) ?? Self.blankImage
     }
     
@@ -42,11 +30,11 @@ struct IconImageView: View {
     }
 }
 
-struct IconImageView_Previews: PreviewProvider {
+struct FileImageView_Previews: PreviewProvider {
     @State static var filePath = ""
     
     static var previews: some View {
-        IconImageView(filePath: $filePath)
-            .frame(width: 300, height: 300)
+        FileImageView(filePath: $filePath)
+            .frame(width: 200, height: 200)
     }
 }

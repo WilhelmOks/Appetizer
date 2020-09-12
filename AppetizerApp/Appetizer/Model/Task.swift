@@ -66,7 +66,7 @@ final class Task : Identifiable, ObservableObject {
     }
     
     func addOutputTask() {
-        let newOutputTask = OutputTask()
+        let newOutputTask = OutputTask(task: self)
         outputTasks.append(newOutputTask)
         objectWillChange.send()
     }

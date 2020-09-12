@@ -20,9 +20,9 @@ struct OutputTaskListView: View {
                     GroupBox {
                         OutputTaskView(
                             task: self.$task, outputTask: self.$task.outputTasks[index],
+                            previewImage: self.task.outputTasks[index].previewImage,
                             deleteClosure: { m in
                                 self.task.removeOutputTask(m)
-                                //self.update()
                         })
                     }
                     Spacer()
@@ -38,18 +38,14 @@ struct OutputTaskListView: View {
             }
         }.padding(0).disabled(disabled)
     }
-    
-    /*func update() {
-        self.disabled.toggle()
-        self.disabled.toggle()
-    }*/
 }
 
 struct OutputTaskListView_Previews: PreviewProvider {
+    static let task = Task(name: "Task")
     @State static var task1 = Task(name: "Task 1")
         .with(outputTasks: [
-            OutputTask(),
-            OutputTask()
+            OutputTask(task: task),
+            OutputTask(task: task)
         ])
     
     static var previews: some View {

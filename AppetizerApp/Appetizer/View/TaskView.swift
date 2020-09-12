@@ -38,8 +38,8 @@ struct TaskView: View {
                 }
                 TextField("input image path", text: $model.inputPath).disabled(true)
                 HStack(alignment: .top) {
-                    IconImageView(filePath: $model.inputPath)
-                        .frame(width: 64, height: 64)
+                    FileImageView(filePath: $model.inputPath)
+                        .frame(width: 48, height: 48)
                         .border(Color.secondary)
                     OutputTaskListView(task: $model)
                 }
@@ -72,9 +72,10 @@ struct TaskView: View {
 }
 
 struct TaskView_Previews: PreviewProvider {
+    static let task = Task(name: "Task")
     @State static var task1 = Task(name: "Task 1").with(outputTasks: [
-        OutputTask(),
-        OutputTask()
+        OutputTask(task: task),
+        OutputTask(task: task)
     ])
     
     static var previews: some View {
