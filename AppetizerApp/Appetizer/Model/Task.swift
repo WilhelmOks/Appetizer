@@ -66,7 +66,7 @@ final class Task : Identifiable, ObservableObject {
     }
     
     func addOutputTask() {
-        let newOutputTask = OutputTask(name: String(Int.random(in: 0..<100000)))
+        let newOutputTask = OutputTask()
         outputTasks.append(newOutputTask)
         objectWillChange.send()
     }

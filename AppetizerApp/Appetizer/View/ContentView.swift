@@ -31,7 +31,7 @@ struct ContentView: View {
                             model: self.$userData.tasks[self.userData.tasks.firstIndex(where: {$0.id == model.id})!],
                             delete:
                                 { m in self.userData.removeTask(m)
-                                    self.update()
+                                    //self.update()
                         })
                         .padding([.top, .bottom], 4)
                         .padding([.leading, .trailing], 8)
@@ -47,10 +47,11 @@ struct ContentView: View {
         }.disabled(disabled).frame(minWidth: 300, minHeight: 400)
     }
     
+    /*
     func update() {
         disabled.toggle()
         disabled.toggle()
-    }
+    }*/
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -121,7 +121,7 @@ struct OutputTaskView: View {
 
 struct OutputTaskView_Previews: PreviewProvider {
     @State static var task1 = Task(name: "Task 1")
-    @State static var outputTask1 = OutputTask(name: "OutputTask 1")
+    @State static var outputTask1 = OutputTask()
     //@State static var parentView = OutputTaskListView(task: $task1)
     
     static var previews: some View {

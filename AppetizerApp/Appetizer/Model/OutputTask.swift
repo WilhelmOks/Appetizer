@@ -12,11 +12,11 @@ import HexNSColor
 
 final class OutputTask : Identifiable, ObservableObject {
     let id = UUID()
-    @Published var name: String //TODO: remove
+    //@Published var name: String //TODO: remove
     @Published var enabled: Bool = true
     @Published var selectedTypeIndex: Int = 0 {
         didSet {
-            NotificationCenter.default.post(Notification(name: .init("OutputTaskDidChange")))
+            //NotificationCenter.default.post(Notification(name: .init("OutputTaskDidChange")))
         }
     }
     @Published var outputPath: String = ""
@@ -52,12 +52,17 @@ final class OutputTask : Identifiable, ObservableObject {
     
     var needsSize: Bool { selectedType != .iOSAppIcon }
     
+    /*
     init(name: String) {
         self.name = name
+    }*/
+    
+    init() {
+        
     }
     
     init(_ outputTask: OutputTask) {
-        name = outputTask.name
+        //name = outputTask.name
         enabled = outputTask.enabled
         selectedTypeIndex = outputTask.selectedTypeIndex
         outputPath = outputTask.outputPath
