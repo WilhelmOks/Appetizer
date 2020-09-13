@@ -20,13 +20,25 @@ final class Generator {
                 let inputImage = try NSImage.from(filePath: task.inputPath)
                 let filteredOutputTasks = task.outputTasks.filter{ !$0.deleted && $0.enabled && $0.isReady }
                 for outputTask in filteredOutputTasks {
-                    let scaledImage = inputImage.scaled(toSize: CGSize(width: 16, height: 16), padding: 0)
+                    var outputImage = inputImage.scaled(toSize: CGSize(width: 16, height: 16), padding: 0)
+                    outputImage = process(image: outputImage, outputTask: outputTask)
                     let outputUrl = URL(fileURLWithPath: outputTask.outputPath)
-                    try scaledImage.saveAsPng(fileUrl: outputUrl)
+                    try outputImage.saveAsPng(fileUrl: outputUrl)
                 }
             }
         } catch let error {
             print(error)
         }
+    }
+    
+    func process(image: NSImage, outputTask: OutputTask) -> NSImage {
+        var outputImage = image
+        if outputTask.clearWhite {
+            outputImage = outputImage.clearedWhite()
+        }
+        if let tint = outputTask.color {
+            outputImage = outputImage.tinted(withColor: tint)
+        }
+        return outputImage
     }
 }

@@ -46,6 +46,8 @@ final class Task : Identifiable, ObservableObject {
     
     init(name: String) {
         self.name = name
+        
+        subscribeToChanges()
     }
     
     init(_ task: Task) {
@@ -54,6 +56,17 @@ final class Task : Identifiable, ObservableObject {
         enabled = task.enabled
         inputPath = task.inputPath
         deleted = task.deleted
+        
+        subscribeToChanges()
+    }
+    
+    func subscribeToChanges() {
+        objectWillChange.sink { [weak self] _ in
+            guard let this = self else { return }
+            for outputTask in this.outputTasks {
+                outputTask.previewImageWillChange.send()
+            }
+        }.store(in: &cancellables)
     }
     
     func with(outputTasks: [OutputTask]) -> Self {

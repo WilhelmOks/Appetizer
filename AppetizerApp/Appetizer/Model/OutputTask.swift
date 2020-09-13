@@ -18,15 +18,31 @@ final class OutputTask : Identifiable, ObservableObject {
     @Published var enabled: Bool = true
     @Published var selectedTypeIndex: Int = 0
     @Published var outputPath: String = ""
-    @Published var sizeXString: String = ""
-    @Published var sizeYString: String = ""
-    @Published var paddingString: String = ""
+    @Published var sizeXString: String = "" {
+        didSet {
+            previewImageWillChange.send()
+        }
+    }
+    @Published var sizeYString: String = "" {
+        didSet {
+            previewImageWillChange.send()
+        }
+    }
+    @Published var paddingString: String = "" {
+        didSet {
+            previewImageWillChange.send()
+        }
+    }
     @Published var colorString: String = "" {
         didSet {
             previewImageWillChange.send()
         }
     }
-    @Published var clearWhite: Bool = false
+    @Published var clearWhite: Bool = false {
+        didSet {
+            previewImageWillChange.send()
+        }
+    }
     @Published var androidFolderPrefixString: String = ""
     @Published var fileNameString: String = ""
     @Published var deleted = false
@@ -62,6 +78,8 @@ final class OutputTask : Identifiable, ObservableObject {
     init(task: Task) {
         self.task = task
         
+        updatePreviewImage()
+        
         previewImageWillChange.sink { _ in
             self.updatePreviewImage()
         }.store(in: &previewImageCancellables)
@@ -90,7 +108,8 @@ final class OutputTask : Identifiable, ObservableObject {
     
     func updatePreviewImage() {
         if let inputImage = NSImage(contentsOfFile: task.inputPath) {
-            previewImage = inputImage.tinted(withColor: color)
+            previewImage = Generator.shared.process(image: inputImage, outputTask: self)
+            //previewImage = inputImage.tinted(withColor: color)
         } else {
             previewImage = NSImage()
         }
