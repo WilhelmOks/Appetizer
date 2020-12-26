@@ -11,7 +11,7 @@ import SwiftUI
 struct ImageView: View {
     @Binding var image: NSImage
     
-    static let bgImage = NSImage(imageLiteralResourceName:  "image_bg")
+    static let bgImage = NSImage(imageLiteralResourceName: "image_bg")
     
     var body: some View {
         ZStack {

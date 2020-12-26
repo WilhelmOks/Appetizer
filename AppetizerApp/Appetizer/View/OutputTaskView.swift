@@ -9,45 +9,47 @@
 import SwiftUI
 
 struct OutputTaskView: View {
-    @EnvironmentObject var userData: UserData
-    @Binding var task: Task
-    @Binding var outputTask: OutputTask
+    //@EnvironmentObject var userData: UserData
+    //@Binding var task: Task
+    //@Binding var outputTask: OutputTask
+    @ObservedObject var viewModel: OutputTaskViewModel
     @State var previewImage: NSImage
     
-    var deleteClosure: (_ outputTask: OutputTask) -> ()
+    //var deleteClosure: (_ outputTask: OutputTask) -> ()
     
     var body: some View {
         HStack(alignment: .top, spacing: 4) {
             TextButton(text: "-") {
-                self.deleteClosure(self.outputTask)
+                //self.deleteClosure(self.outputTask)
+                viewModel.deleteOutputTask()
             }
             VStack(alignment: .leading, spacing: 4) {
                 HStack(alignment: .center) {
-                    Picker(selection: $outputTask.selectedTypeIndex, label: Text("")) {
+                    Picker(selection: $viewModel.outputTask.selectedTypeIndex, label: Text("")) {
                         ForEach(0..<UserData.outputTypes.count) {
                             Text(UserData.outputTypes[$0].displayName)
                         }
                     }
                     .frame(width: 150, height: nil)
                     
-                    if outputTask.needsSize {
+                    if viewModel.outputTask.needsSize {
                         GroupBox(label: Text("size")) {
                             HStack(spacing: 2) {
-                                TextField("width", text: $outputTask.sizeXString)
+                                TextField("width", text: $viewModel.outputTask.sizeXString)
                                 .frame(width: 50)
                                 
                                 Text("x")
                                 
-                                TextField("height", text: $outputTask.sizeYString)
+                                TextField("height", text: $viewModel.outputTask.sizeYString)
                                 .frame(width: 50)
                             }
                         }.frame(width: 130)
                     }
                     
-                    if outputTask.selectedType == .androidImage {
+                    if viewModel.outputTask.selectedType == .androidImage {
                         GroupBox(label: Text("Android folder prefix")) {
                             HStack(spacing: 2) {
-                                TextField(outputTask.androidFolderPrefixDefault, text: $outputTask.androidFolderPrefixString)
+                                TextField(viewModel.outputTask.androidFolderPrefixDefault, text: $viewModel.outputTask.androidFolderPrefixString)
                                 .frame(width: 110)
                             }
                         }.frame(width: 130)
@@ -59,26 +61,26 @@ struct OutputTaskView: View {
                 HStack(alignment: .center) {
                     GroupBox(label: Text("name")) {
                         HStack(spacing: 2) {
-                            TextField("", text: $outputTask.fileNameString)
+                            TextField("", text: $viewModel.outputTask.fileNameString)
                             .frame(width: 80)
                         }
                     }.frame(width: 100).padding(.leading, 4)
                     
                     GroupBox(label: Text("padding")) {
                         HStack(spacing: 2) {
-                            TextField("0", text: $outputTask.paddingString)
+                            TextField("0", text: $viewModel.outputTask.paddingString)
                             .frame(width: 40)
                         }
                     }.frame(width: 60)
                     
                     GroupBox(label: Text("color")) {
                         HStack(spacing: 2) {
-                            TextField("#RRGGBB", text: $outputTask.colorString)
+                            TextField("#RRGGBB", text: $viewModel.outputTask.colorString)
                             .frame(width: 80)
                         }
                     }.frame(width: 100)
                     
-                    Toggle(isOn: $outputTask.clearWhite) {
+                    Toggle(isOn: $viewModel.outputTask.clearWhite) {
                         Text("clear white")
                     }
                     
@@ -86,7 +88,7 @@ struct OutputTaskView: View {
                 }
                 
                 HStack(alignment: .bottom) {
-                    TextField("output image path", text: $outputTask.outputPath)
+                    TextField("output image path", text: $viewModel.outputTask.outputPath)
                     .truncationMode(.head)
                     .disabled(true)
                     .padding(.leading, 8)
@@ -95,7 +97,7 @@ struct OutputTaskView: View {
                         self.pickOutputFile()
                     }
                     
-                    ImageView(image: $outputTask.previewImage)
+                    ImageView(image: $viewModel.outputTask.previewImage)
                     .frame(width: 48, height: 48)
                     .border(Color.secondary)
                 }
@@ -117,10 +119,11 @@ struct OutputTaskView: View {
         guard dialog.runModal() == .OK else { return }
         guard let result = dialog.url else { return }
         let path = result.path
-        outputTask.outputPath = path
+        $viewModel.outputTask.outputPath.wrappedValue = path
+        /*
         DispatchQueue.main.async {
             self.userData.update() //needed for the case when an existing file is selected
-        }
+        }*/
     }
 }
 
@@ -130,7 +133,8 @@ struct OutputTaskView_Previews: PreviewProvider {
     //@State static var parentView = OutputTaskListView(task: $task1)
     
     static var previews: some View {
-        OutputTaskView(task: $task1, outputTask: $outputTask1, previewImage: NSImage(), deleteClosure: { m in })
+        //OutputTaskView(task: $task1, outputTask: $outputTask1, previewImage: NSImage(), deleteClosure: { m in })
+        OutputTaskView(viewModel: OutputTaskViewModel(outputTask: OutputTask(task: Task(name: "?")), taskViewModel: TaskViewModel(task: Task(name: "?"), contentViewModel: ContentViewModel(UserData()))), previewImage: NSImage())
         .frame(width: 550, height: nil, alignment: .center)
     }
 }

@@ -27,18 +27,20 @@ final class Task : Identifiable, ObservableObject {
             objectWillChange.send()
         }
     }
+    /*
     @Published var deleted = false {
         didSet {
             objectWillChange.send()
         }
-    }
+    }*/
     
+    /*
     var existingOuputTasks: [OutputTask] {
         outputTasks.filter { !$0.deleted }
-    }
+    }*/
     
     var isReady: Bool {
-        !existingOuputTasks.isEmpty && existingOuputTasks.allSatisfy{ $0.isReady } && !inputPath.isEmpty || !enabled
+        !outputTasks.isEmpty && outputTasks.allSatisfy{ $0.isReady } && !inputPath.isEmpty || !enabled
     }
     
     let objectWillChange = PassthroughSubject<Void, Never>()
@@ -55,7 +57,7 @@ final class Task : Identifiable, ObservableObject {
         outputTasks = task.outputTasks.map { OutputTask($0) }
         enabled = task.enabled
         inputPath = task.inputPath
-        deleted = task.deleted
+        //deleted = task.deleted
         
         subscribeToChanges()
     }
@@ -97,7 +99,7 @@ final class Task : Identifiable, ObservableObject {
         }
     }
 }
-
+/*
 final class TaskVM : ObservableObject, Identifiable {
     @Published var task: Task
     
@@ -118,4 +120,4 @@ final class TaskVM : ObservableObject, Identifiable {
         self.task = task
         //self.inputPathTextFieldContent = task.inputPath
     }
-}
+}*/

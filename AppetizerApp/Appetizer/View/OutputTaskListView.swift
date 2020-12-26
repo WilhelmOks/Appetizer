@@ -9,34 +9,47 @@
 import SwiftUI
 
 struct OutputTaskListView: View {
-    @EnvironmentObject var userData: UserData
-    @Binding var task: Task
-    @State var disabled = false
+    //@EnvironmentObject var userData: UserData
+    //@Binding var task: Task
+    @ObservedObject var viewModel: TaskViewModel
+    //@State var disabled = false
 
     var body: some View {
         VStack {
-            ForEach(0..<task.outputTasks.count, id: \.self) { index in
-                HStack {
-                    GroupBox {
-                        OutputTaskView(
-                            task: self.$task, outputTask: self.$task.outputTasks[index],
-                            previewImage: self.task.outputTasks[index].previewImage,
-                            deleteClosure: { m in
-                                self.task.removeOutputTask(m)
-                        })
+            ForEach(0..<viewModel.outputTasks.count, id: \.self) { index in
+                if !viewModel.outputTasks[index].isDeleted {
+                    HStack {
+                        GroupBox {
+                            /*
+                            OutputTaskView(
+                                task: $viewModel.task,
+                                outputTask: self.$viewModel.outputTasks[index].value.outputTask,
+                                previewImage: self.viewModel.outputTasks[index].value.outputTask.previewImage,
+                                deleteClosure: { m in
+                                    self.viewModel.task.removeOutputTask(m)
+                            })*/
+                            OutputTaskView(
+                                viewModel: OutputTaskViewModel(
+                                    outputTask: viewModel.outputTasks[index].outputTask,
+                                    taskViewModel: viewModel
+                                ),
+                                previewImage: viewModel.outputTasks[index].value.outputTask.previewImage
+                            )
+                        }
+                        Spacer()
                     }
-                    Spacer()
                 }
             }
             HStack {
                 TextButton(text: "+") {
-                    self.userData.addOutputTask(forTask: self.task)
+                    //TODO: self.userData.addOutputTask(forTask: self.task)
                     //self.update()
+                    viewModel.addOutputTask()
                 }
                 .padding(.leading, 4)
                 Spacer()
             }
-        }.padding(0).disabled(disabled)
+        }.padding(0)//.disabled(disabled)
     }
 }
 
@@ -49,7 +62,8 @@ struct OutputTaskListView_Previews: PreviewProvider {
         ])
     
     static var previews: some View {
-        OutputTaskListView(task: $task1)
+        let taskViewModel = TaskViewModel(task: task1, contentViewModel: ContentViewModel(UserData()))
+        OutputTaskListView(viewModel: taskViewModel)
         .frame(width: nil, height: nil)
     }
 }

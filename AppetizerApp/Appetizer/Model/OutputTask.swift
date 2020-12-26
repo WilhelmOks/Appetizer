@@ -45,7 +45,7 @@ final class OutputTask : Identifiable, ObservableObject {
     }
     @Published var androidFolderPrefixString: String = ""
     @Published var fileNameString: String = ""
-    @Published var deleted = false
+    //@Published var deleted = false
     
     @Published var previewImage: NSImage = NSImage()
     
@@ -97,7 +97,7 @@ final class OutputTask : Identifiable, ObservableObject {
         clearWhite = outputTask.clearWhite
         androidFolderPrefixString = outputTask.androidFolderPrefixString
         fileNameString = outputTask.fileNameString
-        deleted = outputTask.deleted
+        //deleted = outputTask.deleted
         
         updatePreviewImage()
         

@@ -18,7 +18,7 @@ final class Generator {
         do {
             for task in tasks {
                 let inputImage = try NSImage.from(filePath: task.inputPath)
-                let filteredOutputTasks = task.outputTasks.filter{ !$0.deleted && $0.enabled && $0.isReady }
+                let filteredOutputTasks = task.outputTasks.filter{ $0.enabled && $0.isReady }
                 for outputTask in filteredOutputTasks {
                     var outputImage = inputImage.scaled(toSize: CGSize(width: 16, height: 16), padding: 0)
                     outputImage = process(image: outputImage, outputTask: outputTask)

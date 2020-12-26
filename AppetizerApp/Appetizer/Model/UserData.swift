@@ -18,16 +18,17 @@ final class UserData: ObservableObject {
     }
     @Published var isGenerateButtonEnabled: Bool = false
     
+    /*
     var existingTasks: [Task] {
         tasks.filter{ !$0.deleted }
-    }
+    }*/
     
     //var taskViewModels: [TaskVM] { tasks.map { TaskVM($0) } }
     
     static let outputTypes: [OutputType] = OutputType.allCases
     
     var isReadyToGenerate: Bool {
-        !existingTasks.isEmpty && existingTasks.allSatisfy { $0.isReady }
+        !tasks.isEmpty && tasks.allSatisfy { $0.isReady }
     }
     
     let objectWillChange = PassthroughSubject<Void, Never>()
@@ -59,17 +60,14 @@ final class UserData: ObservableObject {
         objectWillChange.send()
     }
     
+    /*
     func removeTask(_ task: Task) {
         /*
-        let index = tasks.firstIndex { $0.id == task.id }
-        if let index = index {
-            tasks.remove(at: index)
-        }*/
-        
         if let task = tasks.first(where: { $0.id == task.id }) {
             task.deleted = true
         }
         objectWillChange.send()
+         */
     }
     
     func cloneTask(_ task: Task) {
@@ -80,7 +78,7 @@ final class UserData: ObservableObject {
             subscribeToChanges(cloned)
         }
         objectWillChange.send()
-    }
+    }*/
     
     func addOutputTask(forTask task: Task) {
         guard let task = self.tasks.first(where: { $0.id == task.id }) else { return }
@@ -111,6 +109,6 @@ final class UserData: ObservableObject {
     }
     
     func generateImages() {
-        Generator.shared.execute(tasks.filter{ !$0.deleted && $0.enabled && $0.isReady })
+        Generator.shared.execute(tasks.filter{ /*!$0.deleted && */$0.enabled && $0.isReady })
     }
 }

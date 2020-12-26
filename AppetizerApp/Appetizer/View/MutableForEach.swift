@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+/*
 struct MutableForEach<
         Data: RandomAccessCollection,
         ID: Hashable,
@@ -25,6 +25,7 @@ struct MutableForEach<
     }
 }
 
+
 struct MutableForEach_Previews: PreviewProvider {
     @State static var data: [String] = ["a", "b"]
     
@@ -34,3 +35,4 @@ struct MutableForEach_Previews: PreviewProvider {
         }
     }
 }
+*/

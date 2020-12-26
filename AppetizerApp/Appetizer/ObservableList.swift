@@ -11,6 +11,7 @@ import Foundation
 /**
  Is not allowed to contain duplicate ids.
  */
+/*
 public class ObservableList<Element: Identifiable>: ObservableObject {
     @Published var ids: [Element.ID] = []
     @Published var elementsDict: [Element.ID : Element] = [:]
@@ -95,7 +96,7 @@ public class ObservableList<Element: Identifiable>: ObservableObject {
         }
     }
 }
-
+*/
 /*
 extension Dictionary where Value: Identifiable {
     typealias Key = Value.ID

@@ -12,7 +12,7 @@ struct FileImageView: View {
     @Binding var filePath: String
     
     static let blankImage = NSImage()
-    static let bgImage = NSImage(imageLiteralResourceName:  "image_bg")
+    static let bgImage = NSImage(imageLiteralResourceName: "image_bg")
     
     var image: NSImage {
         NSImage(contentsOfFile: filePath) ?? Self.blankImage

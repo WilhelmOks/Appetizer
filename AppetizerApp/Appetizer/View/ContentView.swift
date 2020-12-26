@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var userData: UserData
     @State var disabled = false
+    @ObservedObject var viewModel: ContentViewModel
     
     var body: some View {
         Group {
@@ -26,19 +27,16 @@ struct ContentView: View {
                     }.padding([.leading, .trailing], 8)
                 }.frame(height: 40)
                 ScrollView {
-                    ForEach(userData.tasks.filter { !$0.deleted }) { model in
-                        TaskView(
-                            model: self.$userData.tasks[self.userData.tasks.firstIndex(where: {$0.id == model.id})!],
-                            delete:
-                                { m in self.userData.removeTask(m)
-                                    //self.update()
-                        })
-                        .padding([.top, .bottom], 4)
-                        .padding([.leading, .trailing], 8)
+                    ForEach(0..<viewModel.tasks.count, id: \.self) { index in
+                        if !viewModel.tasks[index].isDeleted {
+                            TaskView(viewModel: viewModel.tasks[index])
+                                .padding(.vertical, 4)
+                                .padding(.horizontal, 8)
+                        }
                     }
                     HStack {
                         TextButton(text: "+") {
-                            self.userData.addTask()
+                            viewModel.addTask()
                         }
                         Spacer()
                     }.padding(EdgeInsets(top: 4, leading: 8, bottom: 8, trailing: 8))
@@ -58,8 +56,9 @@ struct ContentView_Previews: PreviewProvider {
     @State static var previewTasks = [Task(name: "Task 1"), Task(name: "Task 2")]
     
     static var previews: some View {
-        ContentView()
+        let userData = UserData(tasks: previewTasks)
+        ContentView(viewModel: ContentViewModel(userData))
             .frame(width: 300, height: 400, alignment: .center)
-            .environmentObject(UserData(tasks: previewTasks))
+            .environmentObject(userData)
     }
 }

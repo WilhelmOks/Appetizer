@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C6CEA822597913D00427E6D /* MarkableAsDeleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CEA812597913D00427E6D /* MarkableAsDeleted.swift */; };
+		0C6CEA8B2597938C00427E6D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CEA8A2597938C00427E6D /* ContentViewModel.swift */; };
+		0C6CEA93259793ED00427E6D /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CEA92259793ED00427E6D /* TaskViewModel.swift */; };
+		0C6CEA982597941900427E6D /* OutputTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CEA972597941900427E6D /* OutputTaskViewModel.swift */; };
 		ED633A2C24E2936900AF0F37 /* image_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ED633A2B24E2936800AF0F37 /* image_bg.png */; };
 		ED633A2E24E2951600AF0F37 /* FileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633A2D24E2951600AF0F37 /* FileImageView.swift */; };
 		ED633A3024E2A16700AF0F37 /* OutputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED633A2F24E2A16700AF0F37 /* OutputType.swift */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C6CEA812597913D00427E6D /* MarkableAsDeleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkableAsDeleted.swift; sourceTree = "<group>"; };
+		0C6CEA8A2597938C00427E6D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		0C6CEA92259793ED00427E6D /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		0C6CEA972597941900427E6D /* OutputTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputTaskViewModel.swift; sourceTree = "<group>"; };
 		ED633A2B24E2936800AF0F37 /* image_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image_bg.png; sourceTree = "<group>"; };
 		ED633A2D24E2951600AF0F37 /* FileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileImageView.swift; sourceTree = "<group>"; };
 		ED633A2F24E2A16700AF0F37 /* OutputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputType.swift; sourceTree = "<group>"; };
@@ -107,6 +115,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C6CEA892597931F00427E6D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C6CEA8A2597938C00427E6D /* ContentViewModel.swift */,
+				0C6CEA92259793ED00427E6D /* TaskViewModel.swift */,
+				0C6CEA972597941900427E6D /* OutputTaskViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		ED633A2A24E292ED00AF0F37 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +164,9 @@
 				EDA2DB18240C259200369A6D /* Appetizer.entitlements */,
 				ED633A3124E2FF4A00AF0F37 /* ObservableList.swift */,
 				EDBDF07724F130500045A5C2 /* Generator.swift */,
+				0C6CEA812597913D00427E6D /* MarkableAsDeleted.swift */,
 				EDA2DB3D241565E500369A6D /* Model */,
+				0C6CEA892597931F00427E6D /* ViewModel */,
 				EDA2DB3C2415656800369A6D /* View */,
 				ED633A2A24E292ED00AF0F37 /* Images */,
 				EDA2DB11240C259200369A6D /* Preview Content */,
@@ -363,10 +383,14 @@
 				EDA0BE93250D464500B96724 /* ImageView.swift in Sources */,
 				EDA2DB0C240C258E00369A6D /* AppDelegate.swift in Sources */,
 				ED633A3224E2FF4A00AF0F37 /* ObservableList.swift in Sources */,
+				0C6CEA93259793ED00427E6D /* TaskViewModel.swift in Sources */,
+				0C6CEA982597941900427E6D /* OutputTaskViewModel.swift in Sources */,
 				ED7FE78E24D08F4600B000D0 /* OutputTaskListView.swift in Sources */,
 				ED7F463D242F907500648CC4 /* OutputTask.swift in Sources */,
 				ED633A3024E2A16700AF0F37 /* OutputType.swift in Sources */,
+				0C6CEA8B2597938C00427E6D /* ContentViewModel.swift in Sources */,
 				ED633A2E24E2951600AF0F37 /* FileImageView.swift in Sources */,
+				0C6CEA822597913D00427E6D /* MarkableAsDeleted.swift in Sources */,
 				EDBDF07824F130500045A5C2 /* Generator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,7 +565,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wok.Appetizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -563,7 +587,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = wok.Appetizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
