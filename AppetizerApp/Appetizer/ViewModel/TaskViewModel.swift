@@ -20,6 +20,7 @@ class TaskViewModel: ObservableObject {
     init(task: Task, contentViewModel: ContentViewModel) {
         self.contentViewModel = contentViewModel
         self.task = task
+        self.outputTasks = task.outputTasks.map{ OutputTaskViewModel(outputTask: $0, taskViewModel: self) }.markableAsDeleted()
     }
     
     func cloneTask() {
