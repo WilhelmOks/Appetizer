@@ -27,17 +27,6 @@ final class Task : Identifiable, ObservableObject {
             objectWillChange.send()
         }
     }
-    /*
-    @Published var deleted = false {
-        didSet {
-            objectWillChange.send()
-        }
-    }*/
-    
-    /*
-    var existingOuputTasks: [OutputTask] {
-        outputTasks.filter { !$0.deleted }
-    }*/
     
     var isReady: Bool {
         !outputTasks.isEmpty && outputTasks.allSatisfy{ $0.isReady } && !inputPath.isEmpty || !enabled

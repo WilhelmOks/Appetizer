@@ -10,7 +10,11 @@ import Foundation
 
 class OutputTaskViewModel: ObservableObject {
     let taskViewModel: TaskViewModel
-    @Published var outputTask: OutputTask
+    @Published var outputTask: OutputTask {
+        didSet {
+            taskViewModel.contentViewModel.userData.validate()
+        }
+    }
 
     init(outputTask: OutputTask, taskViewModel: TaskViewModel) {
         self.taskViewModel = taskViewModel

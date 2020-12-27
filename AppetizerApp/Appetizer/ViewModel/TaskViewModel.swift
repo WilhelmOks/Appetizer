@@ -10,10 +10,15 @@ import Foundation
 
 class TaskViewModel: ObservableObject {    
     let contentViewModel: ContentViewModel
-    @Published var task: Task
+    @Published var task: Task {
+        didSet {
+            contentViewModel.userData.validate()
+        }
+    }
     @Published var outputTasks: [MarkableAsDeleted<OutputTaskViewModel>] = [] {
         didSet {
             task.outputTasks = outputTasks.existing().map(\.outputTask)
+            contentViewModel.userData.validate()
         }
     }
     

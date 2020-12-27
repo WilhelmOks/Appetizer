@@ -9,7 +9,7 @@
 import Foundation
 
 class ContentViewModel: ObservableObject {
-    private let userData: UserData
+    let userData: UserData
     
     @Published var tasks: [MarkableAsDeleted<TaskViewModel>] = [] {
         didSet {
