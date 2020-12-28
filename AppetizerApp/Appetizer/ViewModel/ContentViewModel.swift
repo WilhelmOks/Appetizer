@@ -23,7 +23,7 @@ class ContentViewModel: ObservableObject {
     }
     
     func addTask() {
-        let task = Task(name: "Task \(Int.random(in: 0...9999))")
+        let task = Task()
         tasks.append(TaskViewModel(task: task, contentViewModel: self))
     }
     

@@ -130,13 +130,11 @@ struct OutputTaskView: View {
 }
 
 struct OutputTaskView_Previews: PreviewProvider {
-    @State static var task1 = Task(name: "Task 1")
+    @State static var task1 = Task()
     @State static var outputTask1 = OutputTask(task: task1)
-    //@State static var parentView = OutputTaskListView(task: $task1)
     
     static var previews: some View {
-        //OutputTaskView(task: $task1, outputTask: $outputTask1, previewImage: NSImage(), deleteClosure: { m in })
-        OutputTaskView(viewModel: OutputTaskViewModel(outputTask: OutputTask(task: Task(name: "?")), taskViewModel: TaskViewModel(task: Task(name: "?"), contentViewModel: ContentViewModel(UserData()))), previewImage: NSImage())
+        OutputTaskView(viewModel: OutputTaskViewModel(outputTask: OutputTask(task: Task()), taskViewModel: TaskViewModel(task: Task(), contentViewModel: ContentViewModel(UserData()))), previewImage: NSImage())
         .frame(width: 550, height: nil, alignment: .center)
     }
 }

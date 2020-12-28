@@ -46,8 +46,8 @@ struct OutputTaskListView: View {
 }
 
 struct OutputTaskListView_Previews: PreviewProvider {
-    static let task = Task(name: "Task")
-    @State static var task1 = Task(name: "Task 1")
+    static let task = Task()
+    @State static var task1 = Task()
         .with(outputTasks: [
             OutputTask(task: task),
             OutputTask(task: task)

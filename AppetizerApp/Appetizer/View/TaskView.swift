@@ -29,7 +29,7 @@ struct TaskView: View {
                     Toggle(isOn: self.$viewModel.task.enabled) {
                         Text("enabled")
                     }
-                    Text(viewModel.task.name).font(.headline)
+                    //Text(viewModel.task.name).font(.headline)
                 }
                 
                 TextField("input image path", text: $viewModel.task.inputPath)
@@ -80,8 +80,8 @@ struct TaskView_Previews: PreviewProvider {
     }
     
     static func makeViewModel() -> TaskViewModel {
-        let task = Task(name: "Task")
-        let task1 = Task(name: "Task 1").with(outputTasks: [
+        let task = Task()
+        let task1 = Task().with(outputTasks: [
             OutputTask(task: task),
             OutputTask(task: task)
         ])

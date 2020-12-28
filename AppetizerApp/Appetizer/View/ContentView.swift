@@ -53,7 +53,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @State static var previewTasks = [Task(name: "Task 1"), Task(name: "Task 2")]
+    @State static var previewTasks = [Task(), Task()]
     
     static var previews: some View {
         let userData = UserData(tasks: previewTasks)
