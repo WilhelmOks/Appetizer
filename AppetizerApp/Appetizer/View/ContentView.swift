@@ -42,14 +42,10 @@ struct ContentView: View {
                     }.padding(EdgeInsets(top: 4, leading: 8, bottom: 8, trailing: 8))
                 }
             }
-        }.disabled(disabled).frame(minWidth: 300, minHeight: 400)
+        }
+        .disabled(disabled)
+        .frame(minWidth: 600, minHeight: 400)
     }
-    
-    /*
-    func update() {
-        disabled.toggle()
-        disabled.toggle()
-    }*/
 }
 
 struct ContentView_Previews: PreviewProvider {

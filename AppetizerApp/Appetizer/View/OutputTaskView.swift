@@ -18,13 +18,14 @@ struct OutputTaskView: View {
                 viewModel.deleteOutputTask()
             }
             VStack(alignment: .leading, spacing: 4) {
-                HStack(alignment: .center) {
+                HStack(alignment: .bottom) {
                     Picker(selection: $viewModel.outputTask.selectedTypeIndex, label: Text("")) {
                         ForEach(0..<UserData.outputTypes.count) {
                             Text(UserData.outputTypes[$0].displayName)
                         }
                     }
                     .frame(width: 150, height: nil)
+                    .padding(.bottom, 6)
                     
                     if viewModel.outputTask.needsSize {
                         GroupBox(label: Text("size")) {
@@ -55,7 +56,7 @@ struct OutputTaskView: View {
                 }
                 .fixedSize()
                 
-                HStack(alignment: .center) {
+                HStack(alignment: .bottom) {
                     GroupBox(label: Text("name")) {
                         HStack(spacing: 2) {
                             TextField("", text: $viewModel.outputTask.fileNameString)
@@ -80,6 +81,7 @@ struct OutputTaskView: View {
                     Toggle(isOn: $viewModel.outputTask.clearWhite) {
                         Text("clear white")
                     }
+                    .padding(.bottom, 10)
                     
                     Spacer()
                 }
