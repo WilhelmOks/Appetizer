@@ -57,6 +57,7 @@ struct OutputTaskView: View {
                     
                     Spacer()
                 }
+                .fixedSize()
                 
                 HStack(alignment: .center) {
                     GroupBox(label: Text("name")) {
@@ -86,6 +87,7 @@ struct OutputTaskView: View {
                     
                     Spacer()
                 }
+                .fixedSize()
                 
                 HStack(alignment: .bottom) {
                     TextField("output image path", text: $viewModel.outputTask.outputPath)

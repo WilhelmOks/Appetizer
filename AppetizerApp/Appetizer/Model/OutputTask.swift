@@ -45,12 +45,11 @@ final class OutputTask : Identifiable, ObservableObject {
     }
     @Published var androidFolderPrefixString: String = ""
     @Published var fileNameString: String = ""
-    //@Published var deleted = false
     
     @Published var previewImage: NSImage = NSImage()
     
     let previewImageWillChange = PassthroughSubject<Void, Never>()
-    private var previewImageCancellables: Set<AnyCancellable> = []
+    var previewImageCancellable: AnyCancellable?
     
     var isReady: Bool {
         let isValid = !outputPath.isEmpty && (!needsSize || sizeX != nil && sizeY != nil)
@@ -80,9 +79,9 @@ final class OutputTask : Identifiable, ObservableObject {
         
         updatePreviewImage()
         
-        previewImageWillChange.sink { _ in
-            self.updatePreviewImage()
-        }.store(in: &previewImageCancellables)
+        previewImageCancellable = previewImageWillChange.sink { [weak self] _ in
+            self?.updatePreviewImage()
+        }
     }
     
     init(_ outputTask: OutputTask) {
@@ -97,13 +96,12 @@ final class OutputTask : Identifiable, ObservableObject {
         clearWhite = outputTask.clearWhite
         androidFolderPrefixString = outputTask.androidFolderPrefixString
         fileNameString = outputTask.fileNameString
-        //deleted = outputTask.deleted
         
         updatePreviewImage()
         
-        previewImageWillChange.sink { _ in
-            self.updatePreviewImage()
-        }.store(in: &previewImageCancellables)
+        previewImageCancellable = previewImageWillChange.sink { [weak self] _ in
+            self?.updatePreviewImage()
+        }
     }
     
     func updatePreviewImage() {

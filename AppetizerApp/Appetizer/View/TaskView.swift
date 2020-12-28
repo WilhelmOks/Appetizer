@@ -31,15 +31,22 @@ struct TaskView: View {
                     }
                     Text(viewModel.task.name).font(.headline)
                 }
-                TextField("input image path", text: $viewModel.task.inputPath).disabled(true)
+                
+                TextField("input image path", text: $viewModel.task.inputPath)
+                    .disabled(true)
+                
                 HStack(alignment: .top) {
                     FileImageView(filePath: $viewModel.task.inputPath)
                         .frame(width: 48, height: 48)
                         .border(Color.secondary)
+                    
                     OutputTaskListView(viewModel: viewModel)
                 }
+                .fixedSize(horizontal: false, vertical: true)
+                
                 Spacer()
             }
+            
             Spacer()
         }
         .padding(6)
@@ -67,12 +74,6 @@ struct TaskView: View {
 }
 
 struct TaskView_Previews: PreviewProvider {
-    /*static let task = Task(name: "Task")
-    @State static var task1 = Task(name: "Task 1").with(outputTasks: [
-        OutputTask(task: task),
-        OutputTask(task: task)
-    ])*/
-    
     static var previews: some View {
         TaskView(viewModel: makeViewModel())
             .frame(width: 600, height: nil, alignment: .center)

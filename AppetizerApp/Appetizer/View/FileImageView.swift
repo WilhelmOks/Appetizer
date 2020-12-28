@@ -22,7 +22,7 @@ struct FileImageView: View {
         ZStack {
             Image(nsImage: Self.bgImage)
                 .resizable(resizingMode: .tile)
-            
+
             Image(nsImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)

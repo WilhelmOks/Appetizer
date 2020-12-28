@@ -20,14 +20,6 @@ struct OutputTaskListView: View {
                 if !viewModel.outputTasks[index].isDeleted {
                     HStack {
                         GroupBox {
-                            /*
-                            OutputTaskView(
-                                task: $viewModel.task,
-                                outputTask: self.$viewModel.outputTasks[index].value.outputTask,
-                                previewImage: self.viewModel.outputTasks[index].value.outputTask.previewImage,
-                                deleteClosure: { m in
-                                    self.viewModel.task.removeOutputTask(m)
-                            })*/
                             OutputTaskView(
                                 viewModel: OutputTaskViewModel(
                                     outputTask: viewModel.outputTasks[index].outputTask,
