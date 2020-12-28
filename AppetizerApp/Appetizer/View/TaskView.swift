@@ -59,6 +59,9 @@ struct TaskView: View {
                     if let urlData = urlData as? Data {
                         let url = NSURL(absoluteURLWithDataRepresentation: urlData, relativeTo: nil) as URL
                         self.$viewModel.task.inputPath.wrappedValue = url.path
+                        for outputTask in viewModel.outputTasks.map(\.value.outputTask) {
+                            outputTask.previewImageWillChange.send()
+                        }
                     }
                 }
             }

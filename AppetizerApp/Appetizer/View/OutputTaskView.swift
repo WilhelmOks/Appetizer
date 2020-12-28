@@ -121,6 +121,8 @@ struct OutputTaskView: View {
         guard let result = dialog.url else { return }
         let path = result.path
         $viewModel.outputTask.outputPath.wrappedValue = path
+        
+        viewModel.outputTask.previewImageWillChange.send()
         /*
         DispatchQueue.main.async {
             self.userData.update() //needed for the case when an existing file is selected
