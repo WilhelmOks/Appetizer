@@ -9,10 +9,7 @@
 import SwiftUI
 
 struct OutputTaskListView: View {
-    //@EnvironmentObject var userData: UserData
-    //@Binding var task: Task
     @ObservedObject var viewModel: TaskViewModel
-    //@State var disabled = false
 
     var body: some View {
         VStack {
@@ -34,14 +31,13 @@ struct OutputTaskListView: View {
             }
             HStack {
                 TextButton(text: "+") {
-                    //TODO: self.userData.addOutputTask(forTask: self.task)
-                    //self.update()
                     viewModel.addOutputTask()
                 }
                 .padding(.leading, 4)
                 Spacer()
             }
-        }.padding(0)//.disabled(disabled)
+        }
+        .padding(0)
     }
 }
 

@@ -9,18 +9,12 @@
 import SwiftUI
 
 struct OutputTaskView: View {
-    //@EnvironmentObject var userData: UserData
-    //@Binding var task: Task
-    //@Binding var outputTask: OutputTask
     @ObservedObject var viewModel: OutputTaskViewModel
     @State var previewImage: NSImage
-    
-    //var deleteClosure: (_ outputTask: OutputTask) -> ()
     
     var body: some View {
         HStack(alignment: .top, spacing: 4) {
             TextButton(text: "-") {
-                //self.deleteClosure(self.outputTask)
                 viewModel.deleteOutputTask()
             }
             VStack(alignment: .leading, spacing: 4) {
@@ -36,12 +30,14 @@ struct OutputTaskView: View {
                         GroupBox(label: Text("size")) {
                             HStack(spacing: 2) {
                                 TextField("width", text: $viewModel.outputTask.sizeXString)
-                                .frame(width: 50)
+                                    .frame(width: 50)
+                                    .valid(viewModel.outputTask.sizeX != nil)
                                 
                                 Text("x")
                                 
                                 TextField("height", text: $viewModel.outputTask.sizeYString)
-                                .frame(width: 50)
+                                    .frame(width: 50)
+                                    .valid(viewModel.outputTask.sizeY != nil)
                             }
                         }.frame(width: 130)
                     }
@@ -91,9 +87,10 @@ struct OutputTaskView: View {
                 
                 HStack(alignment: .bottom) {
                     TextField("output image path", text: $viewModel.outputTask.outputPath)
-                    .truncationMode(.head)
-                    .disabled(true)
-                    .padding(.leading, 8)
+                        .truncationMode(.head)
+                        .disabled(true)
+                        .valid(!viewModel.outputTask.outputPath.isEmpty)
+                        .padding(.leading, 8)
                     
                     TextButton(text: "pick") {
                         self.pickOutputFile()

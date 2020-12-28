@@ -9,12 +9,7 @@
 import SwiftUI
 
 struct TaskView: View {
-    //@EnvironmentObject var userData: UserData
     @ObservedObject var viewModel: TaskViewModel
-    //@ObservedObject var model: Task
-    //@Binding var model: Task
-    
-    //var deleteClosure: (_ model: TaskViewModel) -> ()
 
     var body: some View {
         HStack {
@@ -29,11 +24,11 @@ struct TaskView: View {
                     Toggle(isOn: self.$viewModel.task.enabled) {
                         Text("enabled")
                     }
-                    //Text(viewModel.task.name).font(.headline)
                 }
                 
-                TextField("input image path", text: $viewModel.task.inputPath)
+                TextField("input image path (drag and drop file)", text: $viewModel.task.inputPath)
                     .disabled(true)
+                    .valid(!viewModel.task.inputPath.isEmpty)
                 
                 HStack(alignment: .top) {
                     FileImageView(filePath: $viewModel.task.inputPath)
