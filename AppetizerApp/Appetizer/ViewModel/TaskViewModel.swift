@@ -41,6 +41,18 @@ class TaskViewModel: ObservableObject {
     
     func addOutputTask() {
         let newOutputTask = OutputTask(task: task)
+        
+        if let lastOutputTask = outputTasks.last?.value.outputTask {
+            newOutputTask.selectedTypeIndex = lastOutputTask.selectedTypeIndex
+            newOutputTask.androidFolderPrefixString = lastOutputTask.androidFolderPrefixString
+            newOutputTask.sizeXString = lastOutputTask.sizeXString
+            newOutputTask.sizeYString = lastOutputTask.sizeYString
+            newOutputTask.fileNameString = lastOutputTask.fileNameString
+            newOutputTask.paddingString = lastOutputTask.paddingString
+            newOutputTask.colorString = lastOutputTask.colorString
+            newOutputTask.clearWhite = lastOutputTask.clearWhite
+        }
+        
         outputTasks.append(OutputTaskViewModel(outputTask: newOutputTask, taskViewModel: self))
     }
 }
