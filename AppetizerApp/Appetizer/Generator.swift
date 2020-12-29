@@ -20,10 +20,45 @@ final class Generator {
                 let inputImage = try NSImage.from(filePath: task.inputPath)
                 let filteredOutputTasks = task.outputTasks.filter{ $0.enabled && $0.isReady }
                 for outputTask in filteredOutputTasks {
-                    var outputImage = inputImage.scaled(toSize: CGSize(width: 16, height: 16), padding: 0)
-                    outputImage = process(image: outputImage, outputTask: outputTask)
+                    let image = process(image: inputImage, outputTask: outputTask)
                     let outputUrl = URL(fileURLWithPath: outputTask.outputPath)
-                    try outputImage.saveAsPng(fileUrl: outputUrl)
+                    let fileName = !outputTask.fileNameString.isEmpty ? outputTask.fileNameString : task.inputFileName
+                    let sizeX = outputTask.sizeX ?? 1
+                    let sizeY = outputTask.sizeY ?? 1
+                    
+                    switch outputTask.selectedType {
+                    case .androidImage:
+                        Appetizer.makeAndroidImages(
+                            from: image,
+                            to: outputUrl,
+                            name: fileName,
+                            folderPrefix: outputTask.androidFolderPrefix,
+                            sizeX: sizeX,
+                            sizeY: sizeY,
+                            padding: outputTask.padding)
+                    case .iOSImage:
+                        Appetizer.makeIOSImages(
+                            from: image,
+                            to: outputUrl,
+                            name: fileName,
+                            sizeX: sizeX,
+                            sizeY: sizeY,
+                            padding: outputTask.padding)
+                    case .iOSAppIcon:
+                        Appetizer.makeIOSAppIconImages(
+                            from: image,
+                            to: outputUrl,
+                            name: fileName,
+                            padding: outputTask.padding)
+                    case .singleImage:
+                        Appetizer.makeSingleImage(
+                            from: image,
+                            to: outputUrl,
+                            name: fileName,
+                            sizeX: sizeX,
+                            sizeY: sizeY,
+                            padding: outputTask.padding)
+                    }
                 }
             }
         } catch let error {

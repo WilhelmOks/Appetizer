@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C6CD388259A44C900EE0ED0 /* View+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CD387259A44C900EE0ED0 /* View+Validation.swift */; };
+		0C6CD3F7259B8B4E00EE0ED0 /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CD3F6259B8B4E00EE0ED0 /* Appetizer.swift */; };
 		0C6CEA822597913D00427E6D /* MarkableAsDeleted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CEA812597913D00427E6D /* MarkableAsDeleted.swift */; };
 		0C6CEA8B2597938C00427E6D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CEA8A2597938C00427E6D /* ContentViewModel.swift */; };
 		0C6CEA93259793ED00427E6D /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CEA92259793ED00427E6D /* TaskViewModel.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		0C6CD387259A44C900EE0ED0 /* View+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Validation.swift"; sourceTree = "<group>"; };
+		0C6CD3F6259B8B4E00EE0ED0 /* Appetizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Appetizer.swift; path = ../Sources/AppetizerCore/Appetizer.swift; sourceTree = "<group>"; };
 		0C6CEA812597913D00427E6D /* MarkableAsDeleted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkableAsDeleted.swift; sourceTree = "<group>"; };
 		0C6CEA8A2597938C00427E6D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		0C6CEA92259793ED00427E6D /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 		EDCD4EB524EFF96B0023846C /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0C6CD3F6259B8B4E00EE0ED0 /* Appetizer.swift */,
 				EDCD4EB624EFF9C40023846C /* NSImageExtension.swift */,
 			);
 			name = Core;
@@ -390,6 +393,7 @@
 				0C6CEA8B2597938C00427E6D /* ContentViewModel.swift in Sources */,
 				ED633A2E24E2951600AF0F37 /* FileImageView.swift in Sources */,
 				0C6CD388259A44C900EE0ED0 /* View+Validation.swift in Sources */,
+				0C6CD3F7259B8B4E00EE0ED0 /* Appetizer.swift in Sources */,
 				0C6CEA822597913D00427E6D /* MarkableAsDeleted.swift in Sources */,
 				EDBDF07824F130500045A5C2 /* Generator.swift in Sources */,
 			);

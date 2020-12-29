@@ -52,7 +52,7 @@ final class OutputTask : Identifiable, ObservableObject {
     var previewImageCancellable: AnyCancellable?
     
     var isReady: Bool {
-        let isValid = !outputPath.isEmpty && (!needsSize || sizeX != nil && sizeY != nil)
+        let isValid = !outputPath.isEmpty && (!needsSize || sizeX != nil && sizeY != nil) && fileNameString.isValidFileName
         return isValid || !enabled
     }
     

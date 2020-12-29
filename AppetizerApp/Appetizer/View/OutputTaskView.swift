@@ -59,8 +59,9 @@ struct OutputTaskView: View {
                 HStack(alignment: .bottom) {
                     GroupBox(label: Text("name")) {
                         HStack(spacing: 2) {
-                            TextField("", text: $viewModel.outputTask.fileNameString)
+                            TextField(viewModel.taskViewModel.task.inputFileName, text: $viewModel.outputTask.fileNameString)
                             .frame(width: 80)
+                            .valid(viewModel.outputTask.fileNameString.isValidFileName)
                         }
                     }.frame(width: 100).padding(.leading, 4)
                     
@@ -108,12 +109,14 @@ struct OutputTaskView: View {
     }
     
     private func pickOutputFile() {
-        let dialog = NSSavePanel()
+        let dialog = NSOpenPanel()
         
-        dialog.title = "Choose a file for the output image"
+        dialog.title = "Choose a folder for the output image"
         dialog.showsResizeIndicator = true
         dialog.showsHiddenFiles = false
-        dialog.allowedFileTypes = ["png"]
+        //dialog.allowedContentTypes = [.directory, .folder]
+        dialog.canChooseDirectories = true
+        dialog.canChooseFiles = false
         dialog.canCreateDirectories = true
         dialog.treatsFilePackagesAsDirectories = true
         

@@ -15,6 +15,10 @@ final class Task : Identifiable, ObservableObject {
     @Published var enabled: Bool = true
     @Published var inputPath: String = ""
     
+    var inputFileName: String {
+        inputPath.isEmpty ? "" : URL(fileURLWithPath: inputPath).deletingPathExtension().lastPathComponent
+    }
+    
     var isReady: Bool {
         !outputTasks.isEmpty && outputTasks.allSatisfy{ $0.isReady } && !inputPath.isEmpty || !enabled
     }
