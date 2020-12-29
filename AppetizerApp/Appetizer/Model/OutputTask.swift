@@ -106,8 +106,7 @@ final class OutputTask : Identifiable, ObservableObject {
     
     func updatePreviewImage() {
         if let inputImage = NSImage(contentsOfFile: task.inputPath) {
-            previewImage = Generator.shared.process(image: inputImage, outputTask: self)
-            //previewImage = inputImage.tinted(withColor: color)
+            previewImage = Generator.shared.processPreview(image: inputImage, outputTask: self)
         } else {
             previewImage = NSImage()
         }

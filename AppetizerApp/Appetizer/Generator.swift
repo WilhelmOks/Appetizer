@@ -76,4 +76,26 @@ final class Generator {
         }
         return outputImage
     }
+    
+    func processPreview(image: NSImage, outputTask: OutputTask) -> NSImage {
+        let scale = 1.0
+        
+        let sizeX = Double(outputTask.sizeX ?? Int(image.size.width))
+        let sizeY = Double(outputTask.sizeY ?? Int(image.size.height))
+        
+        let resX = Appetizer.scaleAndRound(sizeX, scale: scale)
+        let resY = Appetizer.scaleAndRound(sizeY, scale: scale)
+        
+        let scaledPadding = Appetizer.scaleAndRound(outputTask.padding, scale: scale)
+        
+        var outputImage = image.scaled(toSize: .init(width: resX, height: resY), padding: scaledPadding)
+        
+        if outputTask.clearWhite {
+            outputImage = outputImage.clearedWhite()
+        }
+        if let tint = outputTask.color {
+            outputImage = outputImage.tinted(withColor: tint)
+        }
+        return outputImage
+    }
 }
