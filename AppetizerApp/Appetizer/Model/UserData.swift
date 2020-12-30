@@ -16,11 +16,12 @@ final class UserData: ObservableObject {
         }
     }
     @Published var isGenerateButtonEnabled: Bool = false
+    @Published var doneMessageIsShowing: Bool = false
 
     static let outputTypes: [OutputType] = OutputType.allCases
     
     var isReadyToGenerate: Bool {
-        !tasks.isEmpty && tasks.allSatisfy { $0.isReady }
+        !tasks.isEmpty && tasks.allSatisfy { $0.isReady } && tasks.contains { $0.enabled }
     }
     
     init() {
@@ -38,5 +39,9 @@ final class UserData: ObservableObject {
     
     func generateImages() {
         Generator.shared.execute(tasks.filter{ $0.enabled && $0.isReady })
+        doneMessageIsShowing = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.doneMessageIsShowing = false
+        }
     }
 }

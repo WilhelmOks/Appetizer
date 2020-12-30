@@ -17,15 +17,23 @@ struct ContentView: View {
         Group {
             VStack(alignment: .center, spacing: 0) {
                 ZStack {
-                    LinearGradient(gradient: Gradient(colors: [Color.clear, Color(white: 0).opacity(0.18)]), startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: [Color.clear, Color(white: 0).opacity(0.10)]), startPoint: .top, endPoint: .bottom)
                     HStack() {
                         TextButton(text: "generate") {
                             self.userData.generateImages()
                         }
                         .disabled(!userData.isGenerateButtonEnabled)
+                        
+                        Text("done")
+                        .opacity(userData.doneMessageIsShowing ? 1 : 0)
+                        .animation(.easeInOut, value: userData.doneMessageIsShowing)
+                        
                         Spacer()
-                    }.padding([.leading, .trailing], 8)
-                }.frame(height: 40)
+                    }
+                    .padding([.leading, .trailing], 8)
+                }
+                .frame(height: 40)
+                
                 ScrollView {
                     ForEach(0..<viewModel.tasks.count, id: \.self) { index in
                         if !viewModel.tasks[index].isDeleted {
@@ -34,12 +42,15 @@ struct ContentView: View {
                                 .padding(.horizontal, 8)
                         }
                     }
+                    
                     HStack {
                         TextButton(text: "+") {
                             viewModel.addTask()
                         }
+                        
                         Spacer()
-                    }.padding(EdgeInsets(top: 4, leading: 8, bottom: 8, trailing: 8))
+                    }
+                    .padding(EdgeInsets(top: 4, leading: 8, bottom: 8, trailing: 8))
                 }
             }
         }
@@ -54,7 +65,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let userData = UserData(tasks: previewTasks)
         ContentView(viewModel: ContentViewModel(userData))
-            .frame(width: 300, height: 400, alignment: .center)
+            .frame(width: 600, height: 400, alignment: .center)
             .environmentObject(userData)
     }
 }
