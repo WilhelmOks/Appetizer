@@ -10,9 +10,11 @@
     <img src="https://img.shields.io/badge/platforms-mac-brightgreen.svg?style=flat" alt="Mac" />
 </p>
 
-Appetizer is a macOS command line tool that takes an image (in PNG or JPG format) and makes suitable iOS and Android images and app icons.
+Appetizer is a macOS tool that takes an image (in PNG or JPG format) and makes suitable iOS and Android images and app icons from it.
 
-## Usage
+There is a command line version and a GUI version of the app.
+
+## Usage - Command Line App
 
 ### Command Line
 
@@ -103,7 +105,7 @@ Or you can remove padding by providing a negative value:
 
 This can be used to remove unwanted borders: <img src="Images/s_with_border.png" width="32"/> <img src="Images/s_with_border_minus2.png" width="32"/>
 
-## Installation
+## Installation - Command Line App
 
 ### Binary release
 
@@ -118,7 +120,3 @@ You can compile the source using the command line:
 `swift build -c release`
 
 Then copy the `appetizer` binary from the folder `.build/release` to `/usr/local/bin` so that it can be launched from anywhere in the command line.
-
-## TODO
-
-* Make a macOS app, which has the same functions but with a GUI instead of a command line tool. Users should then be able to use either the command line or the GUI tool.
